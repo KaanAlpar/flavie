@@ -10,10 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_064557) do
+ActiveRecord::Schema.define(version: 2019_11_18_092551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversions", force: :cascade do |t|
+    t.string "video_title"
+    t.string "url"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_conversions_on_user_id"
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_decks_on_user_id"
+  end
+
+  create_table "flashcards", force: :cascade do |t|
+    t.bigint "sentence_id"
+    t.text "phrase"
+    t.text "phrase_translation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "easiness_factor", default: 2.5
+    t.integer "repetitions", default: 0
+    t.integer "interval", default: 0
+    t.date "due"
+    t.date "studied_at"
+    t.bigint "deck_id"
+    t.index ["deck_id"], name: "index_flashcards_on_deck_id"
+    t.index ["sentence_id"], name: "index_flashcards_on_sentence_id"
+  end
+
+  create_table "sentences", force: :cascade do |t|
+    t.bigint "conversion_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversion_id"], name: "index_sentences_on_conversion_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +68,9 @@ ActiveRecord::Schema.define(version: 2019_11_18_064557) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conversions", "users"
+  add_foreign_key "decks", "users"
+  add_foreign_key "flashcards", "decks"
+  add_foreign_key "flashcards", "sentences"
+  add_foreign_key "sentences", "conversions"
 end
