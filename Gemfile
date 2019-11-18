@@ -11,6 +11,7 @@ gem 'redis'
 
 gem 'acts_as_learnable'
 gem 'autoprefixer-rails'
+gem 'faker'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
