@@ -19,7 +19,6 @@ class DecksController < ApplicationController
     @deck.user = current_user
     authorize @deck
     if @deck.save
-      raise
       redirect_to deck_path(@deck)
     else
       render :new
