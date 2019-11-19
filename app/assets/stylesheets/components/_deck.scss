@@ -1,3 +1,28 @@
-.deck {
-
+.flashcard-deck {
+  background-color: #DEE8FC;
+  background-position: center;
+  height: 220px;
+  width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #353232;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-style: solid;
+  border-color: #E7E7E7;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  .cards-counter{
+    position: absolute;
+    top: 30px;
+    left: 16px;
+    font-size: 18px;
+    p {
+      font-weight: lighter;
+    }
+  }
 }
