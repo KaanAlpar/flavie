@@ -13,6 +13,7 @@ puts "Creating users..."
 end
 puts "...finished creating users"
 
+<<<<<<< HEAD
 
 # make two decks for each users
 
@@ -48,3 +49,5 @@ puts "finished creating conversions..."
 
 
 
+=======
+>>>>>>> master
