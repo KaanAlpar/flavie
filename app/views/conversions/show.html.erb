@@ -1,1 +1,18 @@
-<h1><%= @conversion.url %></h1>
+<div class="background-blue">
+  <div class="row">
+    <div class="results-header mt-5 p-5">
+      <h1> results:123 flashcards
+    </div>
+  </div>
+</div>
+<div class="background-pink p-5">
+  <div class="flashcard m-2">
+    <h1>flashcards come here</h1>
+  </div>
+  <h1><%= @conversion.url %></h1>
+  <ul class="list-group">
+  <% @conversion.sentences.reverse.each do |sentence| %>
+    <li class="list-group-item"><%= sentence.content %></li>
+  <% end %>
+  </ul>
+</div>
