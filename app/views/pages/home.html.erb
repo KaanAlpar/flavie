@@ -1,8 +1,17 @@
 <h2>the context learning app</h2>
 <h3>Make flashcards from your favorite videos</h4>
 
-<div class="button">
-  <a href="#">Submit</a>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6 text-center">
+      <h1>Welcome to Flavid</h1>
+      <p>Enter a url to start learning!</p>
+      <%= simple_form_for @conversion do |f| %>
+        <%= f.input :url, label: false, placeholder: 'Example: https://www.youtube.com/watch?v=k34EJF923' %>
+        <%= f.button :submit, class: 'btn btn-primary', value: 'Convert!' %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -37,4 +46,3 @@
       </div>
       </div>
     </div>
-</div>
