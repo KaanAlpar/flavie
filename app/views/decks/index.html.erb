@@ -1,0 +1,6 @@
+<h1>My Decks</h1>
+<ul class="list-group">
+  <% @decks.each do |deck| %>
+    <li class="list-group-item"><%= deck.name %></li>
+  <% end %>
+</ul>

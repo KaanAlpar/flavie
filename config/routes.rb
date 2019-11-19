@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'users#show'
   resources :conversions, only: [:create, :show]
-  resources :decks, only: [:show, :create, :new] do
+  resources :decks, only: [:show, :create, :new, :index] do
     resources :flashcards, only: [:create]
     member do
       get 'practice'
