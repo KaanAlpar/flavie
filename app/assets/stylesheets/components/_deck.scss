@@ -3,11 +3,11 @@
   background-position: center;
   height: 220px;
   width: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   color: #343232;
-  font-size: 24px;
+  // font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-style: solid;
@@ -15,14 +15,14 @@
   border-width: 1px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  position: relative;
+  // position: relative;
   h4 {
-    position: absolute;
-    top: 100px;
-    left: 50px;
+    // position: absolute;
+    // top: 100px;
+    // left: 50px;
     font-weight: bold;
   }
-  .cards-counter{
+  .cards-counter {
     margin: 0;
     position: absolute;
     top: 30px;
@@ -40,10 +40,10 @@
   height: 220px;
   width: 360px;
   // padding: rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   color: #343232;
   font-size: 24px;
   font-weight: bold;
