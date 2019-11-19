@@ -7,5 +7,5 @@ class Conversion < ApplicationRecord
   validates :user, presence: true
   accepts_nested_attributes_for :sentences
 
-  after_create :fetch_api_get_sentences
+  # after_create :fetch_api_get_sentences
 end
