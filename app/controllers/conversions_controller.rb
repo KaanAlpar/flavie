@@ -1,12 +1,9 @@
 require 'open-uri'
 
 class ConversionsController < ApplicationController
-  before_action :set_conversion, only: [:show]
+  before_action :set_conversion, only: [:show, :choose_deck]
 
-  # https://www.youtube.com/watch?v=o_XVt5rdpFY
   def create
-    # @conversion = Conversion.new(conversion_params)
-    # @conversion.user = current_user
     url = conversion_params[:url]
     params_new = { conversion: {
       url: url, sentences_attributes: GetSentences.fetch_api_get_sentences(url)
@@ -26,6 +23,13 @@ class ConversionsController < ApplicationController
   end
 
   def show
+    @deck = Deck.new
+    authorize @conversion
+  end
+
+  def choose_deck
+    @deck = Deck.new
+    @deck.flashcards.build
     authorize @conversion
   end
 

@@ -18,6 +18,12 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params)
     @deck.user = current_user
     authorize @deck
+    if @deck.save
+      raise
+      redirect_to deck_path(@deck)
+    else
+      render :new
+    end
   end
 
   def practice
@@ -31,6 +37,6 @@ class DecksController < ApplicationController
   end
 
   def deck_params
-    params.require(:deck).permit(:name)
+    params.require(:deck).permit(:name, flashcards_attributes: [:sentence_id])
   end
 end

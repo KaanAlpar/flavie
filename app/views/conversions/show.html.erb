@@ -10,9 +10,12 @@
     <h1>flashcards come here</h1>
   </div>
   <h1><%= @conversion.url %></h1>
-  <ul class="list-group">
-  <% @conversion.sentences.reverse.each do |sentence| %>
-    <li class="list-group-item"><%= sentence.content %></li>
+  <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
+    <ul class="list-group">
+    <% @conversion.sentences.reverse.each do |sentence| %>
+      <li class="list-group-item"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
+    <% end %>
+    </ul>
+    <%= submit_tag "Submit" %>
   <% end %>
-  </ul>
 </div>

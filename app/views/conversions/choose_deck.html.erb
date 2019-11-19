@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Choose your deck</h1>
+  <%= simple_form_for @deck do |f| %>
+    <%= f.input :name %>
+    <% params[:sentences].each do |sentence_id| %>
+      <%= f.simple_fields_for :flashcards do |flashcards_form| %>
+        <% @sentence = get_sentence(sentence_id) %>
+        <%= flashcards_form.input :sentence_id, as: :hidden, input_html: { value: @sentence.id } %>
+      <% end %>
+    <% end %>
+    <%= f.submit %>
+  <% end %>
+  <ul class="list-group">
+    <% current_user.decks.each do |deck| %>
+      <li class="list-group-item"><%= deck.name %></li>
+    <% end %>
+  </ul>
+</div>
