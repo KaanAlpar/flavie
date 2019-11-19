@@ -22,4 +22,13 @@
       <div class="button-cancel">Cancel Now</div>
 
   </div>
+  <h1><%= @conversion.url %></h1>
+  <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
+    <ul class="list-group">
+    <% @conversion.sentences.reverse.each do |sentence| %>
+      <li class="list-group-item"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
+    <% end %>
+    </ul>
+    <%= submit_tag "Submit" %>
+  <% end %>
 </div>

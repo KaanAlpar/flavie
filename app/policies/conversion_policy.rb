@@ -15,6 +15,10 @@ class ConversionPolicy < ApplicationPolicy
     # - user:   the `current_user` signed in with Devise.
   end
 
+  def choose_deck?
+    user_is_owner_or_admin?
+  end
+
   private
 
   def user_is_owner_or_admin?
