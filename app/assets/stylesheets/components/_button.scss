@@ -1,3 +1,39 @@
-.button {
-  background-color: $red;
+.button-blue {
+  background-color: #94B0DA;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #0F60C4;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.button-orange {
+  background-color: #F3934D;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #0F60C4;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.button-green {
+  background-color: #73C3A6;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #0F60C4;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.button-cancel {
+  background-color: #CBCBCB;
+  color: #726666;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #0F60C4;
+  border-radius: 4px;
+  padding: 2px;
 }
