@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: [:show]
+  before_action :set_deck, only: [:show, :practice]
 
   def show
     authorize @deck

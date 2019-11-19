@@ -18,4 +18,8 @@ class DeckPolicy < ApplicationPolicy
   def new?
     true
   end
+
+  def practice?
+    record.user == user
+  end
 end
