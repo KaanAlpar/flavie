@@ -9,7 +9,7 @@
   <h1>flashcards come here</h1>
   <h1><%= @conversion.url %></h1>
   <ul class="list-group">
-  <% @conversion.sentences.each do |sentence| %>
+  <% @conversion.sentences.reverse.each do |sentence| %>
     <li class="list-group-item"><%= sentence.content %></li>
   <% end %>
   </ul>
