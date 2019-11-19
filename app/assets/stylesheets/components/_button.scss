@@ -1,5 +1,5 @@
 .button-blue {
-  background-color: $purple;
+  background-color: $blue;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -18,27 +18,38 @@
   color: white;
   text-align: center;
   font-weight: bold;
-  border: 1px solid #0F60C4;
   border-radius: 4px;
-  padding: 2px;
+  padding: 10px;
+  margin: 2px;
 }
 
 .button-green {
-  background-color: #73C3A6;
+  background-color: #21A29D;
   color: white;
   text-align: center;
   font-weight: bold;
-  border: 1px solid #0F60C4;
   border-radius: 4px;
-  padding: 2px;
+  padding: 10px;
+  margin: 2px;
+  opacity: .75;
+}
+.button-green:hover {
+  background-color: #228eb5;
+  transition: 0.1s;
+  opacity: 0.75;
 }
 
 .button-cancel {
-  background-color: #CBCBCB;
-  color: #726666;
+  background-color: #DDDDDD;
+  color: #666666;
   text-align: center;
   font-weight: bold;
-  border: 1px solid #0F60C4;
   border-radius: 4px;
-  padding: 2px;
+  padding: 10px;
+  margin: 2px;
+}
+.button-cancel:hover {
+  background-color: #a4a8b2;
+  opacity: 1;
+  transition: 0.1s;
 }
