@@ -13,12 +13,10 @@ puts "Creating users..."
 end
 puts "...finished creating users"
 
-<<<<<<< HEAD
-
 # make two decks for each users
 
 puts "Creating 2 Decks for each User..."
-User.each do |user|
+User.all.each do |user|
   2.times do
     deck_name = Faker::Educator.degree
     Deck.create!(user: user , name: deck_name)
@@ -37,7 +35,7 @@ ted_talks = [
   "https://www.youtube.com/watch?v=GYKhOmONWcA",
   "https://www.youtube.com/watch?v=1i9kcBHX2Nw"
 ]
-User.each do |user|
+User.all.each do |user|
   2.times do
     title = Faker::Quote.yoda
     url = ted_talks.sample
@@ -46,8 +44,3 @@ User.each do |user|
 end
 
 puts "finished creating conversions..."
-
-
-
-=======
->>>>>>> master
