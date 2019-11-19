@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+h2, h3, .button {
+  text-align: center;
+  padding: 8px;
+}
+
+.container {
+  position: relative;
+  width: 80%;
+}
+
+.how-to-use-flavie {
+  position: absolute;
+  right: 15%;
+  display: flex;
+}
+
+.step {
+  display: flex;
+  text-align: left;
+}
+
+.number {
+  font-size: 24px;
+}
+
+img {
+  border-radius: 4px;
+}
+
