@@ -1,3 +1,17 @@
 .flashcard {
-border-color: black;
+ background-color: $light-gray;
+  background-position: center;
+  height: 140px;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-style: solid;
+  border-color: #E7E7E7;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  position: relative;
 }
