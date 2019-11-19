@@ -5,12 +5,14 @@
     </div>
   </div>
 </div>
-<div class="background-pink">
-  <h1>flashcards come here</h1>
+<div class="background-pink p-5">
+  <div class="flashcard m-2">
+    <h1>flashcards come here</h1>
+  </div>
   <h1><%= @conversion.url %></h1>
-  <ul class="list-group">
-  <% @conversion.sentences.each do |sentence| %>
-    <li class="list-group-item"><%= sentence.content %></li>
-  <% end %>
-  </ul>
+    <ul class="list-group">
+      <% @conversion.sentences.each do |sentence| %>
+        <li class="list-group-item"><%= sentence.content %></li>
+      <% end %>
+    </ul>
 </div>
