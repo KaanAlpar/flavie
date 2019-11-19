@@ -1,16 +1,13 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
   <div class="flashcard-deck">
-    <div class="cards-counter">
-      <p>cards = some number</p>
+    <p class='p-3'>cards = some number</p>
+    <div class="text-center py-5">
       <h4>Card Name</h4>
     </div>
   </div>
-  <div class="profile-deck">
-    <p>text</p>
-    <!-- <div class="button-blue">
-      <p>push</p>
-    </div> -->
+  <div class="text-center py-5 profile-deck">
+    <p class="py-3">text</p>
     <%= link_to "Push", "#", class: 'button-blue' %>
   </div>
 </div>
