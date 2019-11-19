@@ -1,0 +1,21 @@
+.results-flashcard {
+  background-color: $light-gray;
+  background-position: center;
+  height: 140px;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border-style: solid;
+  border-color: #E7E7E7;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.results-flashcard:hover {
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
