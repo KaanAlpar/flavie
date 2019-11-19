@@ -1,1 +1,8 @@
-<h1>Decks#New</h1>
+<div class="container">
+  <h1>Add a new deck</h1>
+  <%= simple_form_for @deck do |f| %>
+    <%= f.label 'Name' %>
+    <%= f.input :name, label: false %>
+    <%= f.button :submit, class: 'btn btn-primary', value: 'add' %>
+  <% end %>
+</div>
