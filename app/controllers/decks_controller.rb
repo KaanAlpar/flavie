@@ -1,6 +1,10 @@
 class DecksController < ApplicationController
   before_action :set_deck, only: [:show, :practice]
 
+  def index
+    @decks = policy_scope(Deck).where(user: current_user)
+  end
+
   def show
     authorize @deck
   end
