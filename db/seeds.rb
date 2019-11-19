@@ -28,12 +28,13 @@ puts "finished creating decks..."
 # make 20 conversions (two conversions/each user/one per deck)
 puts "Creating 2 Conversions per User..."
 ted_talks = [
-  "https://www.youtube.com/watch?v=vPAzMG6v46I",
-  "https://www.youtube.com/watch?v=azmfraT4-sw",
   "https://www.youtube.com/watch?v=o_XVt5rdpFY",
-  "https://www.youtube.com/watch?v=PRF3_M6q7Ng",
-  "https://www.youtube.com/watch?v=GYKhOmONWcA",
-  "https://www.youtube.com/watch?v=1i9kcBHX2Nw"
+  "https://www.youtube.com/watch?v=1i9kcBHX2Nw",
+  "https://www.youtube.com/watch?v=KM4Xe6Dlp0Y",
+  "https://www.youtube.com/watch?v=5MgBikgcWnY",
+  "https://www.youtube.com/watch?v=Ge7c7otG2mk",
+  "https://www.youtube.com/watch?v=Bp2Fvkt-TRM",
+  "https://www.youtube.com/watch?v=iBMfg4WkKL8",
 ]
 User.all.each do |user|
   2.times do
