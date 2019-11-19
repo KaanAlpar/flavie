@@ -10,4 +10,9 @@
     <p class="py-3">text</p>
     <%= link_to "Push", "#", class: 'button-blue' %>
   </div>
+  <ul>
+  <% @deck.flashcards.each do |fc| %>
+    <li><%= fc.sentence.content %></li>
+  <% end %>
+  </ul>
 </div>

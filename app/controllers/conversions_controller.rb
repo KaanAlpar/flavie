@@ -5,8 +5,9 @@ class ConversionsController < ApplicationController
 
   def create
     url = conversion_params[:url]
+    sentences = FetchSentencesService.call_api(url)
     params_new = { conversion: {
-      url: url, sentences_attributes: GetSentences.fetch_api_get_sentences(url)
+      url: url, sentences_attributes: sentences
     } }
 
     # Dougs suggestion
