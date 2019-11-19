@@ -9,7 +9,7 @@ class ConversionsController < ApplicationController
     # @conversion.user = current_user
     url = conversion_params[:url]
     params_new = { conversion: {
-      url: url, sentences_attributes: fetch_api_get_sentences(url)
+      url: url, sentences_attributes: GetSentences.fetch_api_get_sentences(url)
     } }
 
     # Dougs suggestion
@@ -37,23 +37,5 @@ class ConversionsController < ApplicationController
 
   def set_conversion
     @conversion = Conversion.find(params[:id])
-  end
-
-  def fetch_api_get_sentences(conversion_url)
-    video_id = conversion_url.last(11)
-    url = "http://video.google.com/timedtext?lang=en&v=#{video_id}"
-    doc = Nokogiri::XML(open(url)).text
-    sentences = []
-
-    if doc != ""
-      doc.split('.').each do |sentence|
-        sentences << { content: sentence }
-      end
-    else
-      puts "This video does not have subtitles"
-      raise
-    end
-
-    sentences
   end
 end
