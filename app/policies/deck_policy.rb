@@ -6,11 +6,11 @@ class DeckPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
+    user_is_owner_or_admin?
   end
 
   def show?
-    record.user == user
+    user_is_owner_or_admin?
     # - record: the restaurant passed to the `authorize` method in controller
     # - user:   the `current_user` signed in with Devise.
   end
@@ -20,6 +20,12 @@ class DeckPolicy < ApplicationPolicy
   end
 
   def practice?
-    record.user == user
+    user_is_owner_or_admin?
+  end
+
+  private
+
+  def user_is_owner_or_admin?
+    record.user == user || user.admin
   end
 end

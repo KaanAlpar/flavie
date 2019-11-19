@@ -6,18 +6,24 @@ class FlashcardPolicy < ApplicationPolicy
   end
 
   def create?
-    record.deck.user == user
+    user_is_owner_or_admin?
   end
 
   def edit?
-    record.deck.user == user
+    user_is_owner_or_admin?
   end
 
   def update?
-    record.deck.user == user
+    user_is_owner_or_admin?
   end
 
   def destroy?
-    record.deck.user == user
+    user_is_owner_or_admin?
+  end
+
+  private
+
+  def user_is_owner_or_admin?
+    record.deck.user == user || user.admin
   end
 end
