@@ -8,11 +8,12 @@
 <div class="background-pink p-5">
   <div class="sentences-wrapper">
     <div class="flashcard m-2">
-      <ul class="list-group">
-        <% @conversion.sentences.each do |sentence| %>
-          <li class="list-group-item"><%= sentence.content %></li>
-        <% end %>
-      </ul>
+      <%= @conversion.url %></h1>
+        <ul class="list-group">
+          <% @conversion.sentences.reverse.each do |sentence| %>
+            <li class="list-group-item"><%= sentence.content %></li>
+          <% end %>
+        </ul>
     </div>
   </div>
 </div>
