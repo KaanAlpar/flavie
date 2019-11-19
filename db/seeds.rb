@@ -8,5 +8,8 @@
 
 puts "Creating users..."
 10.times do
+  email = "#{Faker::Name.first_name}#{Faker::Name.last_name}@test.com".downcase
+  User.create!(email: email, password: 'test123')
 end
 puts "...finished creating users"
+
