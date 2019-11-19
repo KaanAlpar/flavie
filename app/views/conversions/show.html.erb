@@ -1,4 +1,5 @@
 <div class="background-blue">
+<<<<<<< HEAD
   <div class="row">
     <div class="results-header mt-5 p-5">
       <h1> results:123 flashcards
@@ -7,4 +8,10 @@
 </div>
 <div class="background-pink">
   <h1>flashcards come here</h1>
+  <h1><%= @conversion.url %></h1>
+  <ul class="list-group">
+  <% @conversion.sentences.each do |sentence| %>
+    <li class="list-group-item"><%= sentence.content %></li>
+  <% end %>
+  </ul>
 </div>
