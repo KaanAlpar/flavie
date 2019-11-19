@@ -22,6 +22,11 @@
   padding: 10px;
   margin: 2px;
 }
+.button-orange:hover {
+  background-color: #d46e00;
+  transition: 0.1s;
+  opacity: 0.75;
+}
 
 .button-green {
   background-color: #21A29D;
