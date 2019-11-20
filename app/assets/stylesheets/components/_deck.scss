@@ -32,6 +32,11 @@
       font-weight: lighter;
     }
   }
+  .badge {
+    background-color: $light-gray;
+    margin: 4px;
+    border-radius: 25%;
+  }
 }
 
 .profile-deck {

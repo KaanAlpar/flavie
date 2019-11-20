@@ -10,9 +10,11 @@
     <% end %>
     <%= f.submit %>
   <% end %>
-  <ul class="list-group">
+  <ul class="row">
     <% current_user.decks.each do |deck| %>
-      <li class="list-group-item"><%= deck.name %></li>
+      <%= link_to deck_path(deck) do %>
+        <li class="col-12 p-2 m-3 flashcard-deck list-group-item"><%= deck.name %><span class="badge"><%= Flashcard.count %></span></li>
+      <% end %>
     <% end %>
   </ul>
 </div>
