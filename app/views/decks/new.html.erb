@@ -1,8 +1,20 @@
 <div class="container">
-  <h1>Add a new deck</h1>
-  <%= simple_form_for @deck do |f| %>
-    <%= f.label 'Name' %>
-    <%= f.input :name, label: false %>
-    <%= f.button :submit, class: 'btn btn-primary', value: 'add' %>
-  <% end %>
+  <div class="col p-5 align-tem-center justify-content-center">
+    <h1 class="text-center p-3">Add a new deck</h1>
+    <div class="row">
+      <div id="deck-new" class="p-2 flashcard-deck w-50 d-flex flex-column" style="margin: auto;">
+        <p class="p-3">cards = <span class="badge">0</span></p>
+        <div class="text-center d-flex justify-content-center align-items-end flex-grow-1 mb-3">
+          <div class="w-100 pb-5 mx-3">
+            <%= simple_form_for @deck do |f| %>
+              <h3><%= f.label 'Name' %></h3>
+              <%= f.input :name, label: false, autofocus: true %>
+              <%= f.button :submit, class: 'btn btn-primary px-4', value: 'add' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
