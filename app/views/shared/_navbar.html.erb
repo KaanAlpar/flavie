@@ -5,7 +5,7 @@
   </div>
   <% end %>
 
-    <ul class="nav-items">
+    <ul class="nav-items <%= li_class %>">
       <% if user_signed_in? %>
         <li id="home" >
           <%= link_to "Home", "#" %>
