@@ -1,5 +1,5 @@
  <div class="results-banner text-white">
-    <h1>results</h1>
+    <h3>results</h3>
   </div>
   <div class="background-pink">
     <div class="results-flashcard-wrapper">
@@ -7,7 +7,7 @@
           <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
             <ul>
               <% @conversion.sentences.reverse.each do |sentence| %>
-                <li class="flashcard m-2"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
+                <li class="results-flashcard m-1"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
               <% end %>
             </ul>
           <%= submit_tag "Submit" %>
