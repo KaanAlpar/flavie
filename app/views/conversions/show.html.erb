@@ -1,20 +1,29 @@
  <div class="results-banner text-white">
     <h3>results</h3>
-  </div>
-  <div class="background-pink">
-    <div class="results-flashcard-wrapper">
-      <div class="results-flashcards-container">
-          <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
-            <ul>
-              <% @conversion.sentences.reverse.each do |sentence| %>
-                <li class="results-flashcard m-1"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
-              <% end %>
-            </ul>
-          <%= submit_tag "Submit" %>
-        <% end %>
-      </div>
+</div>
+<div class="background-pink">
+  <div class="results-flashcard-wrapper">
+    <div class="results-flashcards-container">
+      <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
+      <ul class="flashcards-list">
+         <% @conversion.sentences.reverse.each do |sentence| %>
+          <li class="flashcard-list-item m-3">
+            <label>
+              <input type="checkbox" name ="sentences[]" value="<%= sentence.id %>" >
+              <span class="results-flashcard"> <h5><%= sentence.content %></h5></span>
+            </label>
+          </li>
+          <% end %>
+        </ul>
+        <%= submit_tag "Submit" %>
+      <% end %>
     </div>
   </div>
+</div>
+
+
+
+
 
 
 

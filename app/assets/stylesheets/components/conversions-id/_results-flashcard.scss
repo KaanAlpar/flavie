@@ -1,7 +1,7 @@
 .results-flashcard {
   background-color: $light-gray;
   background-position: center;
-  height: 90px;
+  height: 105px;
   width: 650px;
   display: flex;
   justify-content: center;
@@ -13,6 +13,26 @@
   border-radius: 5px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   position: relative;
+  cursor: pointer;
+}
+
+.results-flashcard input {
+  display:none;
+}
+
+ input:checked + .results-flashcard {
+    background-color: $green;
+    box-shadow: 3 2 2 4px rgba(0,0,1,0.8);
+    // Uncomment if you prefer a border
+    // box-shadow:0px 0px 0px 3px green inset;
+  }
+
+.flashcard-list-item input {
+  display:none;
+}
+
+.flashcards-list {
+  list-style: none;
 }
 
 .results-flashcard:hover {
