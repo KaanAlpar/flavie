@@ -24,7 +24,6 @@ class ConversionsController < ApplicationController
   end
 
   def show
-    @deck = Deck.new
     authorize @conversion
   end
 
