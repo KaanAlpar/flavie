@@ -1,63 +1,23 @@
-.flashcard-deck {
-  background-color: #DEE8FC;
-  background-position: center;
-  height: 220px;
-  width: 260px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  color: #343232;
-  // font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-style: solid;
-  border-color: #E7E7E7;
-  border-width: 1px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  // position: relative;
-  h4 {
-    // position: absolute;
-    // top: 100px;
-    // left: 50px;
-    font-weight: bold;
-  }
-  .cards-counter {
-    margin: 0;
-    position: absolute;
-    top: 30px;
-    left: 16px;
-    font-size: 18px;
-    p {
-      font-weight: lighter;
-    }
-  }
-  .badge {
-    background-color: $light-gray;
-    margin: 4px;
-    border-radius: 25%;
-  }
-}
+// .flashcard-deck {
+//   background-color: #DEE8FC;
+//   color: #343232;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border: solid #e7e7e7 1px;
+//   border-radius: 5px;
+//   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+// } GRID ITEM IS USED INSTEAD OF THIS
 
 .profile-deck {
   background-color: #f9f9ff;
   background-position: center;
   height: 220px;
   width: 360px;
-  // padding: rem;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   color: #343232;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
-  // border-style: solid;
-  // border-color: #E7E7E7;
-  // border-width: 1px;
   border-radius: 5px;
   border: 1px #e7e7e7 solid;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  // position: relative;
 }
