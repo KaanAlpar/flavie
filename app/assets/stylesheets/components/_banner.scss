@@ -21,6 +21,8 @@
   font-size: 48px;
   text-shadow: 0px 4px 4px #FAFAFA;
   letter-spacing: 1.5px;
+  color: #4D4D4D;
+  font-weight: bolder;
 }
 
 #subtitle {
@@ -28,7 +30,6 @@
 }
 
 .input-group {
-  display: flex;
   justify-content: center;
 }
 
@@ -39,9 +40,14 @@
   font-weight: bold;
   border: 2px solid #94B0DA;
   border-radius: 0 4px 4px 0;
-  padding: 6px;
+  padding: 23px;
 }
 
-.url-form {
-  width: 50%;
+.convert-button:hover {
+  color: white;
+}
+
+.url-form input {
+  width: 100%;
+  padding: 36px;
 }
