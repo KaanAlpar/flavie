@@ -1,6 +1,6 @@
 class FetchSentencesService
   def self.call_api(conversion_url)
-    video_id = conversion_url.last(11)
+    video_id = CGI::parse(URI(conversion_url).query)["v"]
     url = "http://video.google.com/timedtext?lang=en&v=#{video_id}"
     doc = Nokogiri::XML(open(url)).text
     sentences = []
