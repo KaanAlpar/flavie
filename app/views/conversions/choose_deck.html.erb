@@ -13,8 +13,6 @@
   <% end %>
   <!-- CHOOSE AN EXISTING DECKS -->
     <div class="grid-container">
-
-
       <% current_user.decks.each do |deck| %>
         <%= simple_form_for(deck, method: :get, url: deck_path(deck)) do |f| %>
           <% params[:sentences].each do |sentence_id| %>
@@ -26,8 +24,6 @@
           <%= f.submit class: 'grid-item', value: deck.name%>
         <% end %>
       <% end %>
-
-
     </div>
 </div>
 
