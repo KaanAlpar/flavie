@@ -1,8 +1,12 @@
+require 'open-uri'
+require 'rest-client'
+
 class FetchSentencesService
   def self.call_api(conversion_url)
-    video_id = CGI::parse(URI(conversion_url).query)["v"]
+    video_id = CGI::parse(URI(conversion_url).query)["v"].first
     url = "http://video.google.com/timedtext?lang=en&v=#{video_id}"
-    doc = Nokogiri::XML(open(url)).text
+    response = RestClient.get(url)
+    doc = Nokogiri::XML(response.body).text
     sentences = []
 
     if doc != ""

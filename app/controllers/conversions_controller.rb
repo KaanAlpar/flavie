@@ -1,5 +1,4 @@
 require 'open-uri'
-
 class ConversionsController < ApplicationController
   before_action :set_conversion, only: [:show, :choose_deck]
 
