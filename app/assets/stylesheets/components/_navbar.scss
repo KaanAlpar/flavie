@@ -16,8 +16,15 @@
 }
 
 .nav-items li a {
-  color: white;
   padding: 8px;
+}
+
+.white-li a {
+  color: white;
+}
+
+.purple-li a {
+  color: $purple;
 }
 
 .nav-items li a:hover {
