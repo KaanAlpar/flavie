@@ -3,25 +3,28 @@ class ConversionsController < ApplicationController
 
   def create
     url = conversion_params[:url]
-    c = Conversion.find_by(url: url, user: current_user)
-    authorize c
-    if c
-      redirect_to conversion_path(c)
-      return
-    else
-      sentences = FetchSentencesService.call_api(url)
-      params_new = { conversion: {
-        url: url, sentences_attributes: sentences.map { |sentence| { content: sentence } }
-      } }
+    video_id = CGI::parse(URI(url).query)["v"].first
 
-      @conversion = Conversion.new(params_new[:conversion])
-      @conversion.user = current_user
-      authorize @conversion
-      if @conversion.save
-        redirect_to conversion_path(@conversion)
-      else
-        render 'pages/home'
+    begin
+      @conversion = Conversion.find_or_create_by(url: video_id, user: current_user) do |conversion|
+        sentences = FetchSentencesService.call_api(url)
+        params_new = { conversion: {
+          sentences_attributes: sentences.map { |sentence| { content: sentence } }
+        } }
+
+        conversion.assign_attributes(params_new[:conversion])
       end
+    rescue Conversion::MissingSubtitlesError
+      @conversion = Conversion.new
+      @conversion.errors.add(:url, 'is bad. No subtitles avaliable for this video. Please try a different one.')
+    end
+
+    authorize @conversion
+
+    if @conversion.persisted?
+      redirect_to conversion_path(@conversion)
+    else
+      render 'pages/home'
     end
   end
 
