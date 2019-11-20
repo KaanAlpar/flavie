@@ -21,7 +21,7 @@ h2, h3, .button {
 .step {
   display: flex;
   text-align: left;
-  align-items: baseline;
+  align-items: center;
 }
 
 .number {
@@ -30,7 +30,7 @@ h2, h3, .button {
 }
 
 .tablet-image {
-  border-radius: 10%;
+  border-radius: 2%;
   max-width: 450px;
 }
 
@@ -38,4 +38,7 @@ h2, h3, .button {
   margin: 1px 20px;
 }
 
-
+.icon {
+  font-size: 50px;
+  color: $primary;
+}
