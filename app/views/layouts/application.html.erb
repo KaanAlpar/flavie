@@ -10,13 +10,10 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%# if current_user %>
-      <!-- <p>Logged in as: <%#= current_user.email %></p> -->
-    <%# end %>
     <% if params[:controller] == 'pages' %>
       <%= render 'shared/navbar', li_class: 'white-li' %>
     <% else %>
-      <%= render 'shared/navbar', li_class: 'purple-li' %>
+      <%= render 'shared/navbar', li_class: 'white-li' %>
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
