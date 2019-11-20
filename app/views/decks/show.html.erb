@@ -1,18 +1,8 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
-  <div class="flashcard-deck">
-    <p class='p-3'>cards = some number</p>
-    <div class="text-center py-5">
-      <h4>Card Name</h4>
-    </div>
+  <div class="grid-container">
+    <% @deck.flashcards.each do |fc| %>
+      <div class="grid-item"><%= fc.sentence.content %></div>
+    <% end %>
   </div>
-  <div class="text-center py-5 profile-deck">
-    <p class="py-3">text</p>
-    <%= link_to "Push", "#", class: 'button-blue' %>
-  </div>
-  <ul>
-  <% @deck.flashcards.each do |fc| %>
-    <li><%= fc.sentence.content %></li>
-  <% end %>
-  </ul>
 </div>
