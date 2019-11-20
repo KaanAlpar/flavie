@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Choose your deck</h1>
+  <!-- CREATE A NEW DECK -->
   <%= simple_form_for @deck do |f| %>
     <%= f.input :name %>
     <% params[:sentences].each do |sentence_id| %>
@@ -8,13 +9,24 @@
         <%= flashcards_form.input :sentence_id, as: :hidden, input_html: { value: @sentence.id } %>
       <% end %>
     <% end %>
-    <%= f.submit %>
+    <%= f.submit class: 'button-blue', value: 'New Deck' %>
   <% end %>
-  <ul class="row">
-    <% current_user.decks.each do |deck| %>
-      <%= link_to deck_path(deck) do %>
-        <li class="col-12 p-2 m-3 flashcard-deck list-group-item"><%= deck.name %><span class="badge"><%= Flashcard.count %></span></li>
+  <!-- CHOOSE AN EXISTING DECKS -->
+    <div class="grid-container">
+      <% current_user.decks.each do |deck| %>
+        <%= simple_form_for(deck, method: :get, url: deck_path(deck)) do |f| %>
+          <% params[:sentences].each do |sentence_id| %>
+            <%= f.simple_fields_for :flashcards do |flashcards_form| %>
+              <% @sentence = get_sentence(sentence_id) %>
+              <%= flashcards_form.input :sentence_id, as: :hidden, input_html: { value: @sentence.id } %>
+            <% end %>
+          <% end %>
+          <%= f.submit class: 'grid-item', value: deck.name%>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </div>
 </div>
+
+<%#= link_to deck_path(deck), class: 'text-decoration-none' do %>
+  <<!-- div class="grid-item"><%#= deck.name %><span class="badge"><%#= deck.flashcards.count %></span></div> -->
+<%# end %>

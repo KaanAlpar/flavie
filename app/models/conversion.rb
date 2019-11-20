@@ -1,4 +1,5 @@
 class Conversion < ApplicationRecord
+  class MissingSubtitlesError < StandardError; end
   belongs_to :user
   has_many :sentences, dependent: :destroy
   validates :url, presence: true

@@ -7,6 +7,13 @@ class DecksController < ApplicationController
 
   def show
     authorize @deck
+    return unless params[:deck][:flashcards_attributes]
+
+    params = deck_params.to_hash
+    params["flashcards_attributes"].each do |arr|
+      fc = Flashcard.new(sentence: Sentence.find(arr.second["sentence_id"]), deck: @deck)
+      raise unless fc.save
+    end
   end
 
   def new
