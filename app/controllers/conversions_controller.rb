@@ -3,18 +3,25 @@ class ConversionsController < ApplicationController
 
   def create
     url = conversion_params[:url]
-    sentences = FetchSentencesService.call_api(url)
-    params_new = { conversion: {
-      url: url, sentences_attributes: sentences.map { |sentence| { content: sentence } }
-    } }
-
-    @conversion = Conversion.new(params_new[:conversion])
-    @conversion.user = current_user
-    authorize @conversion
-    if @conversion.save
-      redirect_to conversion_path(@conversion)
+    c = Conversion.find_by(url: url, user: current_user)
+    authorize c
+    if c
+      redirect_to conversion_path(c)
+      return
     else
-      render 'pages/home'
+      sentences = FetchSentencesService.call_api(url)
+      params_new = { conversion: {
+        url: url, sentences_attributes: sentences.map { |sentence| { content: sentence } }
+      } }
+
+      @conversion = Conversion.new(params_new[:conversion])
+      @conversion.user = current_user
+      authorize @conversion
+      if @conversion.save
+        redirect_to conversion_path(@conversion)
+      else
+        render 'pages/home'
+      end
     end
   end
 
