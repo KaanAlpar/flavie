@@ -1,9 +1,7 @@
 .results-flashcards-container {
   position: relative;
-  top: -100px;
+  top: -125px;
+  border-radius: 4px;
   background: $pink;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
