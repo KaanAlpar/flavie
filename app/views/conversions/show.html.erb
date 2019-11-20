@@ -2,24 +2,19 @@
     <h1>results</h1>
   </div>
   <div class="background-pink">
-  <div class="results-flashcard-wrapper">
-    <div class="results-flashcards-container">
-      <ul class="list-group">
-        <div class="flashcard m-5">
-          <% @conversion.sentences.reverse.each do |sentence| %>
-             <li class="list-group-item"><%= sentence.content %></li>
-          <% end %>
-        </div>
-      </ul>
+    <div class="results-flashcard-wrapper">
+      <div class="results-flashcards-container">
+          <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
+            <ul>
+              <% @conversion.sentences.reverse.each do |sentence| %>
+                <li class="flashcard m-2"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
+              <% end %>
+            </ul>
+          <%= submit_tag "Submit" %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <h1><%= @conversion.url %></h1>
-  <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
-    <ul class="list-group">
-    <% @conversion.sentences.reverse.each do |sentence| %>
-      <li class="list-group-item"><%= check_box_tag "sentences[]", sentence.id %><%= sentence.content %></li>
-    <% end %>
-    </ul>
-    <%= submit_tag "Submit" %>
-  <% end %>
-</div>
+
+
+
