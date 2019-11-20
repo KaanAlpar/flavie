@@ -5,11 +5,8 @@ class ConversionsController < ApplicationController
     url = conversion_params[:url]
     sentences = FetchSentencesService.call_api(url)
     params_new = { conversion: {
-      url: url, sentences_attributes: sentences
+      url: url, sentences_attributes: sentences.map { |sentence| { content: sentence } }
     } }
-
-    # Dougs suggestion
-    # params_new_2 = {conversion: conversion_params.merge(sentences_attributes: fetch_api_get_sentences(url))}
 
     @conversion = Conversion.new(params_new[:conversion])
     @conversion.user = current_user

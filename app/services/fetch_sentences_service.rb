@@ -5,13 +5,10 @@ class FetchSentencesService
     video_id = CGI::parse(URI(conversion_url).query)["v"].first
     url = "http://video.google.com/timedtext?lang=en&v=#{video_id}"
     response = RestClient.get(url)
-    doc = Nokogiri::XML(response.body).text
-    sentences = []
-
+    doc = Nokogiri::XML(response.body).text.squish
     if doc != ""
-      doc.split('.').each do |sentence|
-        sentences << { content: sentence } unless sentence.blank?
-      end
+      ps = PragmaticSegmenter::Segmenter.new(text: doc)
+      sentences = ps.segment
     else
       puts "This video does not have subtitles"
       raise
