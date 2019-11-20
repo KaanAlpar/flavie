@@ -1,20 +1,20 @@
 <div class="navbar">
-  <%= link_to "#" do %>
-  <div id="logo">
-    <h3>Flavie</h3>
-  </div>
+  <%= link_to root_path do %>
+    <div id="logo">
+      <h3>Flavie</h3>
+    </div>
   <% end %>
 
     <ul class="nav-items <%= li_class %>">
       <% if user_signed_in? %>
         <li id="home" >
-          <%= link_to "Home", "#" %>
+          <%= link_to "Home", root_path %>
         </li>
         <li id="stats">
           <%= link_to "Statistics", "#" %>
         </li>
         <li id="create-deck">
-          <%= link_to "Create Deck", "#" %>
+          <%= link_to "New Deck", new_deck_path %>
         </li>
       <% else %>
         <li class="nav-item">
