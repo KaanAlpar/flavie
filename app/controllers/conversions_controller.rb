@@ -33,12 +33,6 @@ class ConversionsController < ApplicationController
     authorize @conversion
   end
 
-  def choose_deck
-    @deck = Deck.new
-    @deck.flashcards.build
-    authorize @conversion
-  end
-
   private
 
   def conversion_params

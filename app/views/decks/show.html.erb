@@ -1,8 +1,12 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
-  <div class="grid-container">
-    <% @deck.flashcards.each do |fc| %>
-      <div class="grid-item"><%= fc.sentence.content %></div>
-    <% end %>
-  </div>
+  <h2>This deck has <%= @deck.flashcards.count %> flashcards</h2>
+  <p>Due review: review_count</p>
+  <p>New: new_count</p>
+  <p>Last studied: 12/12/2012</p>
+  <!-- <div class="grid-container">
+    <%# @deck.flashcards.each do |fc| %>
+      <div class="grid-item"><%#= fc.sentence.content %></div>
+    <%# end %>
+  </div> -->
 </div>
