@@ -7,15 +7,9 @@
 
   <ul class="nav-items <%= li_class %>">
     <% if user_signed_in? %>
-      <li id="home" >
-        <%= link_to "Home", root_path %>
-      </li>
-      <li id="stats">
-        <%= link_to "Statistics", "#" %>
-      </li>
-      <li id="create-deck">
-        <%= link_to "My Decks", decks_path %>
-      </li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Dashboard", dashboard_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path %></li>
     <% else %>
       <li class="nav-item">
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
