@@ -8,9 +8,19 @@
   padding: 8px 16px;
   &:hover {
     text-decoration: none;
-    color: $purple;
-    background-color: #6767ce;
+    color: white;
+    background-color: #7272e5
   }
+}
+
+.button-light-blue {
+  background-color: #779ed8;
+  color: $white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 
 .button-orange {
@@ -32,12 +42,11 @@
   border-radius: 4px;
   padding: 10px;
   margin: 2px;
-  opacity: .75;
 }
 .button-green:hover {
-  background-color: #228eb5;
+  background-color: #197f7a;
   transition: 0.1s;
-  opacity: 0.75;
+  opacity: 2.75;
 }
 
 .button-cancel {
@@ -53,4 +62,14 @@
   background-color: #a4a8b2;
   opacity: 1;
   transition: 0.1s;
+}
+
+.button-white {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 2rem;
 }
