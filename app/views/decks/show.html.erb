@@ -9,7 +9,7 @@
         <p><strong>Due review:</strong> number of cards to review</p>
         <p><strong>New:</strong> number of new cards in the deck</p>
         <p><strong>Last studied:</strong> <%= @deck.flashcards.first.studied_at %></p> <!-- This is bad -->
-        <%= link_to '#', class: 'button-blue' do %>
+        <%= link_to practice_deck_path(@deck), class: 'button-blue' do %>
           Study now
         <% end %>
       </div>
