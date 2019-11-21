@@ -1,7 +1,7 @@
 .results-flashcard {
   background-color: $light-gray;
   background-position: center;
-  height: 105px;
+  min-height: 105px;
   width: 650px;
   display: flex;
   justify-content: start;
@@ -15,7 +15,7 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   position: relative;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .results-flashcard input {
@@ -40,7 +40,7 @@
 .results-flashcard:hover {
   opacity: 1;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .results-description {
