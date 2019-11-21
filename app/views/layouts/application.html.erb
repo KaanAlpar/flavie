@@ -9,11 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
+  <body class="<%= @body_class %>">
     <% if params[:controller] == 'pages' %>
-      <%= render 'shared/navbar', li_class: 'white-li' %>
+      <%= render 'shared/navbar', li_class: 'purple-li' %>
     <% else %>
-      <%= render 'shared/navbar', li_class: 'white-li' %>
+      <%= render 'shared/navbar', li_class: 'purple-li' %>
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>

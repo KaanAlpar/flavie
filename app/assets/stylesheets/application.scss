@@ -12,6 +12,16 @@
 @import "components/index";
 @import "pages/index";
 
-// body {
-//   padding-top: 70px;
-// }
+body {
+  padding-top: 90px;
+}
+
+body.home-page {
+  padding-top: 0;
+  .navbar {
+    background: none;
+  }
+  .nav-items li a {
+    color: white;
+  }
+}

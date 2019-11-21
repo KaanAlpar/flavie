@@ -1,5 +1,11 @@
 .navbar {
   justify-content: space-between;
+  background: $bg-color;
+  transition: background-color 0.2s ease-in;
+  a:hover {
+    text-decoration: none;
+    color: #7676bf;
+  }
 }
 
 .nav-items {
@@ -24,6 +30,9 @@
 
 .purple-li a {
   color: $purple;
+  &:hover {
+    color: #7676bf;
+  }
 }
 
 .nav-items li a:hover {
@@ -34,8 +43,10 @@
   width: 40px;
 }
 
-#logo h3 {
-  font-family: 'Sansita', sans-serif;
-  font-size: 48px;
-  padding-left: 50px;
+#logo {
+  h3 {
+    font-family: 'Sansita', sans-serif;
+    font-size: 48px;
+    padding-left: 50px;
+  }
 }
