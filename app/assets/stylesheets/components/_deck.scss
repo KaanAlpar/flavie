@@ -1,0 +1,36 @@
+.deck {
+  background-color: #a5c4ff;
+  color: #343232;
+  padding: 1.5rem;
+  font-size: 24px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s ease;
+}
+
+.deck-header {
+  color: #343232;
+  padding: 0 1.5rem;
+  font-size: 20px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s ease;
+}
+
+.deck-p {
+  white-space: nowrap;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.deck:hover {
+  background: #8eb6ff;
+}

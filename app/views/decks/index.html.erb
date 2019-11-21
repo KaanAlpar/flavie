@@ -1,22 +1,37 @@
 <div class="container">
-  <% if session[:sentence_ids] %>
-    <h1>Choose a deck</h1>
-  <% else %>
-    <h1>My Decks</h1>
-  <% end %>
+  <div class="text-center mb-3">
+    <% if session[:sentence_ids] %>
+      <h1>Choose a deck</h1>
+    <% else %>
+      <h1>My Decks</h1>
+    <% end %>
+  </div>
   <!-- CREATE A NEW DECK -->
-  <%= simple_form_for @deck do |f| %>
-    <%= f.input :name %>
-    <%= f.submit class: 'button-blue', value: 'New Deck' %>
-  <% end %>
   <!-- CHOOSE AN EXISTING DECKS -->
-  <div class="grid-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="deck-header m-1">
+        <p class="deck-p">Deck</p>
+        <p class="deck-p">Cards</p>
+      </div>
+    </div>
     <% current_user.decks.each do |deck| %>
-      <%= link_to deck_path(deck) do %>
-        <div class="grid-item">
-          <%= deck.name %>
-        </div>
-      <% end %>
+      <div class="col-sm-12">
+        <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
+          <div class="deck m-1">
+              <p class="deck-p"><%= deck.name %></p>
+              <p class="deck-p">Cards: <%= deck.flashcards.count %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="my-3">
+    <!-- <h2 class="py-3">Add a new deck</h2> -->
+    <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+      <%#= f.label 'Add a new deck', class: 'mr-2' %>
+      <%= f.input :name, placeholder: 'Enter new deck name' %>
+      <%= f.submit class: 'btn btn-primary ml-2', value: 'add' %>
     <% end %>
   </div>
 </div>
