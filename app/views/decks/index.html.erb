@@ -2,12 +2,13 @@
   <div class="text-center mb-3">
     <% if session[:sentence_ids] %>
       <h1>Choose a deck</h1>
+      <% session[:sentence_ids].each do |si| %>
+        <p><%= get_sentence(si).content %></p>
+      <% end %>
     <% else %>
       <h1>My Decks</h1>
     <% end %>
   </div>
-  <!-- CREATE A NEW DECK -->
-  <!-- CHOOSE AN EXISTING DECKS -->
   <div class="row">
     <div class="col-sm-12">
       <div class="deck-header m-1">
