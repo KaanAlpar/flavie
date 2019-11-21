@@ -1,0 +1,27 @@
+
+// .flashcard-deck {
+//   background-color: #DEE8FC;
+//   color: #343232;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border: solid #e7e7e7 1px;
+//   border-radius: 5px;
+//   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+// } GRID ITEM IS USED INSTEAD OF THIS
+
+#deck-new {
+  height: 400px;
+}
+.profile-deck {
+  background-color: #f9f9ff;
+  background-position: center;
+  height: 220px;
+  width: 360px;
+  color: #343232;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border: 1px #e7e7e7 solid;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}

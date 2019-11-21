@@ -2,10 +2,13 @@
   <div class="text-center d-flex align-items-start flex-column p-5 m-auto">
     <div class="m-auto">
       <h1 class="my-5">Flashcard Edit Page</h1>
-      <div class="flashcard d-flex flex-column h-100">
-        <h2><!-- @flashcard.sentence: -->Sentence: <%= @flashcard.sentence.content %></h2>
-        <h3><%= User.name %></h3>
-      </div>
+      <%= link_to '#', do %>
+        <div class="flashcard d-flex flex-column h-100 p-5">
+          <h2><!-- @flashcard.sentence: -->Sentence:</h2>
+          <h4><%= @flashcard.sentence.content %></h4>
+          <h3><%= User.name %></h3>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
