@@ -1,6 +1,22 @@
-<h1>My Decks</h1>
-<ul class="list-group">
-  <% @decks.each do |deck| %>
-    <li class="list-group-item"><%= deck.name %></li>
+<div class="container">
+  <% if session[:sentence_ids] %>
+    <h1>Choose a deck</h1>
+  <% else %>
+    <h1>My Decks</h1>
   <% end %>
-</ul>
+  <!-- CREATE A NEW DECK -->
+  <%= simple_form_for @deck do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: 'button-blue', value: 'New Deck' %>
+  <% end %>
+  <!-- CHOOSE AN EXISTING DECKS -->
+  <div class="grid-container">
+    <% current_user.decks.each do |deck| %>
+      <%= link_to deck_path(deck) do %>
+        <div class="grid-item">
+          <%= deck.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
