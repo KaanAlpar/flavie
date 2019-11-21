@@ -1,4 +1,11 @@
 .results-banner {
   background-color: #5957B9;
-  padding: 150px;
+  padding-bottom: 160px;
+  padding-top: 80px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

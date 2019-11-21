@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'choose_deck', to: 'decks#choose_deck'
   get '/dashboard', to: 'users#show'
   resources :conversions, only: [:create, :show]
-  resources :decks, only: [:show, :create, :new, :index] do
+  resources :decks, only: [:show, :create, :index] do
     resources :flashcards, only: [:create]
     member do
       get 'practice'

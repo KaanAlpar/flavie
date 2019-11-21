@@ -1,22 +1,22 @@
 <div class="results-banner text-white">
-  <h3>results for</h3>
-    <h3>"<%= @conversion.video_title %>"</h3>
+  <h1><%= @conversion.video_title %></h1>
+  <h3 class="results-description m-5">Choose the sentences you want to learn and click next.</h3>
 </div>
-<div class="background-pink">
+<div class="background-light-yellow">
   <div class="results-flashcard-wrapper">
     <div class="results-flashcards-container">
       <%= form_tag choose_deck_path do %>
-      <ul class="flashcards-list">
+      <ul class="flashcards-list p-0">
          <% @conversion.sentences.reverse.each do |sentence| %>
           <li class="flashcard-list-item m-3">
             <label>
               <input type="checkbox" name ="sentence_ids[]" value="<%= sentence.id %>" >
-              <span class="results-flashcard"> <h5><%= sentence.content %></h5></span>
+              <span class="results-flashcard"> <p><%= sentence.content %></p></span>
             </label>
           </li>
           <% end %>
         </ul>
-        <%= submit_tag "Submit" %>
+        <%= submit_tag "next", class:"button-light-blue" %>
       <% end %>
     </div>
   </div>

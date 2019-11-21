@@ -19,11 +19,6 @@ class DecksController < ApplicationController
     end
   end
 
-  def new
-    @deck = Deck.new
-    authorize @deck
-  end
-
   def create
     new_params = deck_params
     unless session[:sentence_ids].nil?
