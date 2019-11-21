@@ -2,13 +2,14 @@
   <div class="text-center d-flex align-items-start flex-column p-5 m-auto">
     <div class="m-auto">
       <h1 class="my-5">Flashcard Edit Page</h1>
-      <%= link_to '#', do %>
-        <div class="flashcard d-flex flex-column h-100 p-5">
-          <h2><!-- @flashcard.sentence: -->Sentence:</h2>
-          <h4><%= @flashcard.sentence.content %></h4>
-          <h3><%= User.name %></h3>
-        </div>
-      <% end %>
+      <div class="flashcard d-flex flex-column h-100 p-5">
+        <%= simple_form_for @flashcard do |f| %>
+          <%= f.simple_fields_for :sentence do |s| %>
+            <%= s.input :content, input_html: {value: @flashcard.sentence.content} %>
+          <% end %>
+          <%= f.button :submit, value: "UPDATE", class: 'button-blue' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
