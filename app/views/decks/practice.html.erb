@@ -1,1 +1,22 @@
-<h1><%= @deck.name %> practice page</h1>
+<div class="container mb-5">
+    <div>
+      <h1>Studying <%= @deck.name %></h1>
+    </div>
+    <div class="practice-area">
+      <div class="flashcard-practice">
+        <div>
+          <%= @deck.flashcards.first.sentence.content %>
+        </div>
+      </div>
+      <div class="practice-buttons">
+        <button class="practice-button button-blue">Answer</button>
+      </div>
+<!--       <div class="practice-buttons">
+        <button class="practice-button button-blue">Again</button>
+        <button class="practice-button button-blue">Easy</button>
+        <button class="practice-button button-blue">Good</button>
+        <button class="practice-button button-blue">Okay</button>
+        <button class="practice-button button-blue">Hard</button>
+      </div> -->
+    </div>
+</div>

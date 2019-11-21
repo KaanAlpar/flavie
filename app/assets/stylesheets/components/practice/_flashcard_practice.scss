@@ -1,0 +1,25 @@
+.practice-area {
+  width: 1000px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcard-practice {
+  background: white;
+  padding: 6rem;
+  font-size: 2rem;
+  border-radius: 5px;
+  width: 720px;
+  background: #c9c9c9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.practice-buttons {
+  margin-top: 32px;
+}
