@@ -4,12 +4,12 @@
 <div class="background-pink">
   <div class="results-flashcard-wrapper">
     <div class="results-flashcards-container">
-      <%= form_tag choose_deck_conversion_path(@conversion), method: :get do %>
+      <%= form_tag choose_deck_path do %>
       <ul class="flashcards-list">
          <% @conversion.sentences.reverse.each do |sentence| %>
           <li class="flashcard-list-item m-3">
             <label>
-              <input type="checkbox" name ="sentences[]" value="<%= sentence.id %>" >
+              <input type="checkbox" name ="sentence_ids[]" value="<%= sentence.id %>" >
               <span class="results-flashcard"> <h5><%= sentence.content %></h5></span>
             </label>
           </li>
