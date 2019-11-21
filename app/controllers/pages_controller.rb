@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @conversion = Conversion.new
+    @body_class = "home-page"
   end
 end
