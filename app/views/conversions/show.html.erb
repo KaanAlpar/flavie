@@ -1,6 +1,7 @@
 <div class="results-banner text-white">
   <h3>"<%= @conversion.video_title %>"</h3>
-  <p class="results-description m-5">choose the flashcards you want to learn and add them to your deck</p>
+  <p class="results-description m-5">choose the flashcards you want to learn and add them to your deck.<br>
+  each flashcard represents one sentence in chronological order.</p>
 </div>
 <div class="background-light-yellow">
   <div class="results-flashcard-wrapper">
@@ -16,7 +17,7 @@
           </li>
           <% end %>
         </ul>
-        <%= submit_tag "Submit" %>
+        <%= submit_tag "next", class:"button-light-blue" %>
       <% end %>
     </div>
   </div>
