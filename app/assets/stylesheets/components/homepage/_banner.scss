@@ -1,5 +1,6 @@
 .banner {
   height: 60vh;
+  min-height: 600px;
   width: 100%;
   background: asset-url('banner_circles.svg') no-repeat center center/cover;
   display: flex;
