@@ -19,10 +19,10 @@
         <% @deck.flashcards.each do |flashcard| %>
           <div class="flashcard-preview m-3">
             <div class="flashcard-preview-left">
-              <%= flashcard.sentence.content %>
+              <p><%= flashcard.sentence.content %></p>
             </div>
             <div class="flashcard-preview-right">
-              "the translation comes here!"
+              <p>"the translation comes here!"</p>
             </div>
           </div>
           <% end %>

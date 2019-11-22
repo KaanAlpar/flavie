@@ -8,16 +8,17 @@
   border-style: solid;
   border-color: rgb(204, 204, 204);
   border-image: initial;
+  align-items: center;
 }
 
 .flashcard-preview-left {
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.25;
   min-height: 72px;
   box-sizing: border-box;
   width: calc(50% - 1px);
   overflow-wrap: break-word;
-  padding: 24px;
+  padding: 18px;
   border-right: 1px solid rgb(229, 229, 229);
 }
 
@@ -28,6 +29,6 @@
   box-sizing: border-box;
   width: calc(50% - 1px);
   overflow-wrap: break-word;
-  padding: 24px;
+  padding: 20px;
   border-left: 1px solid rgb(229, 229, 229);
 }
