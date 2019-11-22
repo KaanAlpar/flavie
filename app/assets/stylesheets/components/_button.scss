@@ -34,6 +34,20 @@
   cursor: pointer;
 }
 
+.button-orange-hover {
+  background-color: #F3934D;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+.button-orange-hover:hover {
+  transform: scale(1.02);
+}
+
 .button-green {
   background-color: #21A29D;
   color: white;
@@ -72,6 +86,13 @@
   margin: 2px;
   cursor: pointer;
   border-radius: 2rem;
+}
+
+
+.button-back-fixed {
+  position: fixed;
+  bottom: 240px;
+  left: 80px;
 }
 
 .button-fixed {
