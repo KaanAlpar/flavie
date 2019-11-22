@@ -11,7 +11,7 @@
 .nav-items {
   list-style-type: none;
   margin-bottom: -1%;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-right: 5%;
 }
@@ -35,8 +35,27 @@
   }
 }
 
-.nav-items li a:hover {
-  text-decoration: none;
+.nav-items li {
+  position: relative;
+}
+
+.nav-items li a:after {
+  display: block;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  transition: bottom 0.2s, opacity 0.2s;
+  height: 7px;
+  background-color: $orange;
+  content: "";
+}
+
+.nav-items li:hover a:after {
+  bottom: -8px;
+  opacity: 1;
+
 }
 
 .navbar img {
@@ -49,4 +68,12 @@
     font-size: 48px;
     padding-left: 50px;
   }
+}
+
+#slogan {
+  font-family: 'Sansita', sans-serif;
+    font-size: 22px;
+    padding-top: 6px;
+    padding-left: 6px;
+    color: $orange;
 }

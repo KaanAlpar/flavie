@@ -1,7 +1,8 @@
 <div class="navbar fixed-top">
   <%= link_to root_path do %>
-    <div id="logo">
+    <div class="d-flex" id="logo">
       <h3>Flavie</h3>
+      <h4 id="slogan">convert.choose.practice.</h4>
     </div>
   <% end %>
 
@@ -9,6 +10,7 @@
     <% if user_signed_in? %>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Dashboard", dashboard_path %></li>
+      <li><%= link_to "My Decks", decks_path %></li>
       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
     <% else %>
       <li class="nav-item">
