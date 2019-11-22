@@ -1,4 +1,4 @@
-<div class="container mb-5">
+<div>
   <div class="text-center mb-3">
     <% if session[:sentence_ids] %>
       <h1>Choose a deck</h1>
@@ -6,33 +6,40 @@
         <!-- <p><%#= get_sentence(si).content %></p> -->
       <%# end %>
     <% else %>
-      <h1>My Decks</h1>
-    <% end %>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="deck-header m-1">
-        <p class="deck-p">Deck</p>
-        <p class="deck-p">Cards</p>
+
+  <div class="cream-background">
+      <h1 class="my-decks">My Decks</h1>
+    <% end %>
+    <div class="white-container">
+      <div class="my-decks-container">
+        <div class="add-deck-button">
+          <div class="my-3">
+            <!-- <h2 class="py-3">Add a new deck</h2> -->
+            <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+              <%#= f.label 'Add a new deck', class: 'mr-2' %>
+              <%= f.input :name, placeholder: 'Enter new deck name' %>
+              <%= f.submit 'add', class: 'button-blue ml-2' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="filters-container">
+          <h3 class="sort-by">Sort by</h3>
+          <p>Alphabetical</p>
+          <p>Number of cards</p>
+          <p>Language</p>
+        </div>
+        <div class="deck-cards-container">
+          <% current_user.decks.each do |deck| %>
+              <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
+                <div class="deck d-flex flex-column">
+                    <p class="deck-title deck-p text-center"><%= deck.name %></p>
+                    <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
+                </div>
+              <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <% current_user.decks.each do |deck| %>
-      <div class="col-sm-12">
-        <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
-          <div class="deck m-1">
-              <p class="deck-p"><%= deck.name %></p>
-              <p class="deck-p">Cards: <%= deck.flashcards.count %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-  <div class="my-3">
-    <!-- <h2 class="py-3">Add a new deck</h2> -->
-    <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-      <%#= f.label 'Add a new deck', class: 'mr-2' %>
-      <%= f.input :name, placeholder: 'Enter new deck name' %>
-      <%= f.submit 'add', class: 'btn btn-primary ml-2' %>
-    <% end %>
   </div>
 </div>
