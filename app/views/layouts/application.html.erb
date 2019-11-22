@@ -10,7 +10,8 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body class="<%= @body_class %>">
-    <% if params[:controller] == 'pages' %>
+    <%# raise %>
+    <% if params[:controller] == 'pages' || (params[:controller] == 'conversions' && params[:action] == 'create') %>
       <%= render 'shared/navbar', li_class: 'purple-li' %>
     <% else %>
       <%= render 'shared/navbar', li_class: 'purple-li' %>
