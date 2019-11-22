@@ -1,0 +1,33 @@
+.flashcard-preview {
+  background-color: rgb(255, 255, 255);
+  font-size: 1rem;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 3px 0px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+}
+
+.flashcard-preview-left {
+  font-weight: 600;
+  line-height: 1.25;
+  min-height: 72px;
+  box-sizing: border-box;
+  width: calc(50% - 1px);
+  overflow-wrap: break-word;
+  padding: 24px;
+  border-right: 1px solid rgb(229, 229, 229);
+}
+
+.flashcard-preview-right {
+  font-weight: 300;
+  line-height: 1.25;
+  min-height: 72px;
+  box-sizing: border-box;
+  width: calc(50% - 1px);
+  overflow-wrap: break-word;
+  padding: 24px;
+  border-left: 1px solid rgb(229, 229, 229);
+}
