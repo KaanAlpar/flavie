@@ -1,0 +1,85 @@
+.deck-wrapper {
+  display: grid;
+  grid-auto-rows: 440px;
+  grid-auto-columns: 440px;
+  position: relative;
+}
+
+.deck {
+  box-shadow: 5px 5px 8px rgba(0,0,0,0.2);
+  background: $white;
+  color: #495057;
+  display: flex;
+  padding: 8px;
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+  justify-content: center;
+  margin: auto;
+}
+
+.my-decks {
+  color: $orange;
+  font-weight: bolder;
+  margin-bottom: 0;
+  padding: 94px;
+}
+
+.deck-header {
+  padding-left: 0;
+}
+
+.deck-name {
+  color: $green;
+  font-weight: bold;
+}
+
+.deck-title {
+  font-weight: bold;
+}
+
+.cream-background {
+  background: #FEF4E5;
+}
+
+.create-deck-button {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.white-container {
+  margin: 0 10% 0 0;
+  background-color: $white;
+}
+
+.my-decks-container {
+  display: flex;
+}
+
+.filters-container {
+  width: 20%;
+  margin: 5% 0 10% 5%;
+  font-size: 24px;
+  color: #86C1D2;
+  line-height: 1.5;
+}
+
+.sort-by {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.deck-cards-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 5% 10% 0 0;
+  grid-gap: 20px;
+}
+
+@media (max-width: 1500px) {
+  .deck-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
