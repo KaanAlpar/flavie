@@ -6,11 +6,13 @@
     <div class="container mb-5">
       <div>
         <h2 class="mb-3">This deck has <%= @deck.flashcards.count %> flashcards</h2>
-        <p><strong>Due review:</strong> number of cards to review</p>
-        <p><strong>New:</strong> number of new cards in the deck</p>
-        <p><strong>Last studied:</strong> <%= @deck.flashcards.first.studied_at %></p> <!-- This is bad -->
-        <%= link_to practice_deck_path(@deck), class: 'button-blue' do %>
-          Study now
+        <% if @deck.flashcards.present? %>
+          <p><strong>Due review:</strong> number of cards to review</p>
+          <p><strong>New:</strong> number of new cards in the deck</p>
+          <p><strong>Last studied:</strong> <%= @deck.flashcards.first.studied_at %></p> <!-- This is bad -->
+          <%= link_to practice_deck_path(@deck), class: 'button-blue' do %>
+            Study now
+          <% end %>
         <% end %>
       </div>
     </div>
