@@ -1,7 +1,23 @@
-<div class="flashcard d-flex flex-column h-100 p-5">
-  <h3><u>Deck Name:</u> <strong><%= @flashcard.deck.name  %></strong></h3>
+<!-- <div class="flashcard d-flex flex-column h-100 p-5">
+  <h3><u>Deck Name:</u> <strong><%#= @flashcard.deck.name  %></strong></h3>
   <h4><u>Sentence:</u> </h4>
-  <h5><%= @flashcard.sentence.content %></h5>
+  <h5><%#= @flashcard.sentence.content %></h5>
   <p><u> This flashcard was reated at: </u></p>
-  <p><%= @flashcard.created_at %></p>
+  <p><%#= @flashcard.created_at %></p>
+</div>
+ -->
+
+<div class="flashcard" data-controller='flashcard' data-target='deck.card'>
+ <div class="flashcard-body">
+   <div class="flashcard-front">
+     <%= flashcard.sentence.content %>
+   </div>
+   <div class="flashcard-back">
+     <%= flashcard.sentence.content %>
+     <p>Translation</p>
+   </div>
+ </div>
+ <footer class='flashcard-footer'>
+   <button class='flashcard-button' data-action='flashcard#flip'>FLIP !</button>
+ </footer>
 </div>
