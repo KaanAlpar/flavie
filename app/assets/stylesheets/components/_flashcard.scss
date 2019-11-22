@@ -22,7 +22,14 @@
 
 .flashcard {
   color: black;
+  font-size: 2rem;
   display: none;
+  &-translation {
+    color: blue;
+  }
+  &-sentence {
+    color: black;
+  }
   &-body {
     display: flex;
     border-radius: 8px;

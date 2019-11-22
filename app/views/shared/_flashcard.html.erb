@@ -10,11 +10,22 @@
  <div class="flashcard" data-controller='flashcard' data-target='deck.card'>
      <div class="flashcard-body">
        <div class="flashcard-front">
-         <p><%= flashcard.sentence.content %></p>
+         <div class="flashcard-sentence">
+           <p><%= flashcard.sentence.content %></p>
+         </div>
        </div>
      <div class="flashcard-back">
-       <p><%= flashcard.sentence.content %></p>
-       <p>Translation goes here</p>
+       <div class="flashcard-sentence">
+         <p><%= flashcard.sentence.content %></p>
+       </div>
+       <div class="flashcard-translation">
+         <% unless flashcard.phrase_translation.blank? %>
+          <p></p>
+          <p><%= flashcard.phrase_translation %></p>
+        <% else %>
+          <p>Translation goes here</p>
+         <% end %>
+       </div>
      </div>
    </div>
    <footer class='flashcard-front-footer'>
