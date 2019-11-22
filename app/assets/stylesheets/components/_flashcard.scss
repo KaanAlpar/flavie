@@ -21,29 +21,21 @@
 // }
 
 .flashcard {
-  color: white;
+  color: black;
   display: none;
   &-body {
     display: flex;
+    border-radius: 8px;
     justify-content: space-around;
     align-items: center;
-    padding: 100px 150px;
-    background: gray;
+    padding: 100px 100px;
+    background: #e2e2e2;
     min-width: 160px;
+  }
+  &-front {
   }
   &-back {
     display: none;
-  }
-  &-button {
-    background: white;
-    border-radius: 20px;
-    margin: 0 auto;
-    color: pink;
-    font-weight: bold;
-    &:hover {
-      background: white;
-      color: pink;
-    }
   }
   &-front-footer {
     padding: 20px;
@@ -59,10 +51,12 @@
         display: none;
       }
       &-back {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       &-body {
-        background: black;
+        background: #bfbfbf;
       }
       &-front-footer {
         display: none;
@@ -71,7 +65,7 @@
         display: block;
         padding: 20px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
       }
     }
   }

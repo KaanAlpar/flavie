@@ -15,6 +15,7 @@ export default class extends Controller {
 
   next() {
     if (this.index < 999) {
+      console.log(this.index)
       this.index++
     }
   }
