@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="d-flex justify-content-between my-5">
+    <div class="">
+      <h1>My dashboard</h1>
+      <h3>Edit your profile and settings</h3>
+    </div>
+    <div class="flex-shrink-1 dashboard-deck-card">
+      <div class="deck-header">
+        <p>Your Decks:  <%= Deck.count %></p>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-flashcards-container">
+    <div class="d-flex justify-content-around">
+      <div class="align-items-around flex-column flashcard-preview p-5">
+        <h3>Flashcard Title</h3>
+        <%= link_to "Button", '#', class: "dashboard-button-blue" %>
+      </div>
+      <div class="align-items-around flex-column flashcard-preview p-5">
+        <h3>Flashcard Title</h3>
+        <%= link_to "Button", '#', class: "dashboard-button-blue" %>
+      </div>
+      <div class="align-items-around flex-column flashcard-preview p-5">
+        <h3>Flashcard Title</h3>
+        <%= link_to "Button", '#', class: "dashboard-button-blue" %>
+      </div>
+    </div>
+    <div class="dashboard-stats-card my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.statisticshowto.com/wp-content/uploads/2013/10/cropped-banner-21.jpg')">
+      <h2>My Statistics</h2>
+    </div>
+  </div>
+</div>
