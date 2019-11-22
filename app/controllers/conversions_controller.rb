@@ -3,10 +3,9 @@ class ConversionsController < ApplicationController
 
   def create
     url = conversion_params[:video_id]
-    video_id = CGI::parse(URI(url).query)["v"].first
-    video_info = FetchVideoInfoService.call_api(video_id)
-
     begin
+      video_id = CGI::parse(URI(url).query)["v"].first
+      video_info = FetchVideoInfoService.call_api(video_id)
       @conversion = Conversion.find_or_create_by(video_id: video_id, user: current_user, video_title: video_info[:title]) do |conversion|
         sentences = FetchSentencesService.call_api(url, video_id)
         params_new = { conversion: {
@@ -17,7 +16,10 @@ class ConversionsController < ApplicationController
       end
     rescue Conversion::MissingSubtitlesError
       @conversion = Conversion.new
-      @conversion.errors.add(:video_id, 'is bad. No subtitles avaliable for this video. Please try a different one.')
+      @conversion.errors.add(:video_id, 'No subtitles avaliable for this video. Please try a different one.')
+    rescue NoMethodError
+      @conversion = Conversion.new(video_id: url)
+      @conversion.errors.add(:video_id, 'Invalid information. URL could not be reached.')
     end
 
     authorize @conversion
