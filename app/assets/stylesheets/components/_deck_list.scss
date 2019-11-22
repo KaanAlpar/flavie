@@ -19,7 +19,7 @@
 }
 
 .my-decks {
-  color: $orange;
+  color: white;
   font-weight: bolder;
   margin-bottom: 0;
   padding: 94px;
@@ -38,8 +38,8 @@
   font-weight: bold;
 }
 
-.cream-background {
-  background: #FEF4E5;
+.blue-background {
+  background: #86C1D2;
 }
 
 .create-deck-button {
@@ -54,15 +54,15 @@
 }
 
 .my-decks-container {
-  display: flex;
+  display: column;
+  justify-content: center;
 }
 
 .filters-container {
   width: 20%;
-  margin: 5% 0 10% 5%;
+  margin: 10% 0 10% 5%;
   font-size: 24px;
   color: #86C1D2;
-  line-height: 1.5;
 }
 
 .sort-by {
@@ -74,7 +74,7 @@
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 5% 10% 0 0;
+  margin: 10% 5% 10% 0;
   grid-gap: 20px;
 }
 

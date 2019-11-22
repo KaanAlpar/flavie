@@ -8,37 +8,35 @@
     <% else %>
   </div>
 
-  <div class="cream-background">
+  <div class="blue-background">
       <h1 class="my-decks">My Decks</h1>
     <% end %>
     <div class="white-container">
       <div class="my-decks-container">
-        <div class="add-deck-button">
-          <div class="my-3">
             <!-- <h2 class="py-3">Add a new deck</h2> -->
             <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
               <%#= f.label 'Add a new deck', class: 'mr-2' %>
               <%= f.input :name, placeholder: 'Enter new deck name' %>
-              <%= f.submit 'add', class: 'button-blue ml-2' %>
+              <%= f.submit 'add', class: 'button-blue' %>
             <% end %>
+                   <div class="container d-flex">
+            <div class="filters-container">
+              <h3 class="sort-by">Sort by</h3>
+              <p>Alphabetical</p>
+              <p>Number of cards</p>
+              <p>Language</p>
+            </div>
+             <div class="deck-cards-container">
+              <% current_user.decks.each do |deck| %>
+                  <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
+                    <div class="deck d-flex flex-column">
+                        <p class="deck-title deck-p text-center"><%= deck.name %></p>
+                        <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
+                    </div>
+                  <% end %>
+                <% end %>
+            </div>
           </div>
-        </div>
-        <div class="filters-container">
-          <h3 class="sort-by">Sort by</h3>
-          <p>Alphabetical</p>
-          <p>Number of cards</p>
-          <p>Language</p>
-        </div>
-        <div class="deck-cards-container">
-          <% current_user.decks.each do |deck| %>
-              <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
-                <div class="deck d-flex flex-column">
-                    <p class="deck-title deck-p text-center"><%= deck.name %></p>
-                    <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
-                </div>
-              <% end %>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>
