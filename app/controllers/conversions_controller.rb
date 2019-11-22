@@ -27,6 +27,7 @@ class ConversionsController < ApplicationController
     if @conversion.persisted?
       redirect_to conversion_path(@conversion)
     else
+      @body_class = "home-page"
       render 'pages/home'
     end
   end
