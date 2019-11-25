@@ -11,33 +11,32 @@
   <div class="blue-background">
       <h1 class="my-decks">My Decks</h1>
     <% end %>
-    <div class="white-container">
-      <div class="my-decks-container">
-            <!-- <h2 class="py-3">Add a new deck</h2> -->
-            <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-              <%#= f.label 'Add a new deck', class: 'mr-2' %>
-              <%= f.input :name, placeholder: 'Enter new deck name' %>
-              <%= f.submit 'add', class: 'button-blue' %>
-            <% end %>
-                   <div class="container d-flex">
-            <div class="filters-container">
-              <h3 class="sort-by">Sort by</h3>
-              <p>Alphabetical</p>
-              <p>Number of cards</p>
-              <p>Language</p>
-            </div>
-             <div class="deck-cards-container">
-              <% current_user.decks.each do |deck| %>
-                  <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
-                    <div class="deck d-flex flex-column">
-                        <p class="deck-title deck-p text-center"><%= deck.name %></p>
-                        <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
-                    </div>
-                  <% end %>
-                <% end %>
-            </div>
-          </div>
+    <div class="white-container pt-5">
+      <div class="form d-flex justify-content-center">
+        <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+        <%#= f.label 'Add a new deck', class: 'mr-2' %>
+        <%= f.input :name, placeholder: 'Enter new deck name' %>
+        <%= f.submit 'add', class: 'button-blue' %>
+        <% end %>
       </div>
+      <div class="container d-flex justify-content-center">
+        <div class="filters-container">
+          <h3 class="sort-by">Sort by</h3>
+          <p>Alphabetical</p>
+          <p>Number of cards</p>
+          <p>Language</p>
+        </div>
+          <div class="deck-cards-container m-5">
+            <% current_user.decks.each do |deck| %>
+            <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
+            <div class="deck d-flex flex-column">
+              <p class="deck-title deck-p text-center"><%= deck.name %></p>
+              <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
+            </div>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
     </div>
   </div>
 </div>
