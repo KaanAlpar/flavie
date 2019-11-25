@@ -3,13 +3,16 @@ class ConversionsController < ApplicationController
 
   def create
     url = conversion_params[:video_id]
-    # language = FetchCountryCodeService.call(conversion_params[:language])
-    language = 'en'
+    if conversion_params[:language] != ''
+      language = FetchCountryCodeService.call(conversion_params[:language])
+    else
+      language = 'en'
+    end
     begin
       video_id = CGI::parse(URI(url).query)["v"].first
       video_info = FetchVideoInfoService.call_api(video_id)
       @conversion = Conversion.find_or_create_by(video_id: video_id, user: current_user, video_title: video_info[:title], language: language) do |conversion|
-        sentences = FetchSentencesService.call_api(url, video_id, language)
+        sentences = FetchSentencesService.call_api(video_id, language)
         params_new = { conversion: {
           sentences_attributes: sentences.map { |sentence| { content: sentence } }
         } }
