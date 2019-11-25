@@ -7,7 +7,7 @@
     <div class="url-form">
       <%= simple_form_for @conversion do |f| %>
         <%= f.input :video_id, label: false, placeholder: 'Example: https://www.youtube.com/watch?v=k34EJF923' %>
-        <%= f.input :language, as: :radio_buttons, collection: ['Japanese', 'English'] %>
+        <%#= f.input :language, as: :radio_buttons, collection: ['Japanese', 'English'] %>
     </div>
     <div>
         <%= f.button :submit, "Convert", class: 'convert-button' %>

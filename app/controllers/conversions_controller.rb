@@ -3,11 +3,8 @@ class ConversionsController < ApplicationController
 
   def create
     url = conversion_params[:video_id]
-    if conversion_params[:language] != ''
-      language = FetchCountryCodeService.call(conversion_params[:language])
-    else
-      language = 'en'
-    end
+    # language = FetchCountryCodeService.call(conversion_params[:language])
+    language = 'en'
     begin
       video_id = CGI::parse(URI(url).query)["v"].first
       video_info = FetchVideoInfoService.call_api(video_id)
