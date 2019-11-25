@@ -1,6 +1,6 @@
 class FetchSentencesService
-  def self.call_api(conversion_url, video_id)
-    url = "http://video.google.com/timedtext?lang=en&v=#{video_id}"
+  def self.call_api(conversion_url, video_id, lang)
+    url = "http://video.google.com/timedtext?lang=#{lang}&v=#{video_id}"
     doc = Nokogiri::XML(RestClient.get(url).body)
 
     final = ""
@@ -11,6 +11,6 @@ class FetchSentencesService
 
     raise Conversion::MissingSubtitlesError if final == "" # No subtitles
 
-    PragmaticSegmenter::Segmenter.new(text: final).segment
+    PragmaticSegmenter::Segmenter.new(text: final, language: lang).segment
   end
 end
