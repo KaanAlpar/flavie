@@ -9,9 +9,12 @@
       <ul class="flashcards-list p-0">
          <% @conversion.sentences.reverse.each do |sentence| %>
           <li class="flashcard-list-item m-3">
+            <span class="checkmark"></span>
+
             <label>
               <input type="checkbox" name ="sentence_ids[]" value="<%= sentence.id %>" >
               <span class="results-flashcard"> <p><%= sentence.content %></p></span>
+              <span class="checkmark"></span>
             </label>
           </li>
           <% end %>
@@ -21,10 +24,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
