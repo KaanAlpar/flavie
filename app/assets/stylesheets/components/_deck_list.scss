@@ -39,7 +39,8 @@
 }
 
 .blue-background {
-  background: #86C1D2;
+  background: $blue;
+  position: relative;
 }
 
 .create-deck-button {
@@ -49,8 +50,10 @@
 }
 
 .white-container {
-  margin: 0 10% 0 0;
+  margin: 0 10% 0 -5%;
   background-color: $white;
+  border-radius: 0px;
+  position: relative;
 }
 
 
