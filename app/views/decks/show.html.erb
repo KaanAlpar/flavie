@@ -22,7 +22,11 @@
               <p><%= flashcard.sentence.content %></p>
             </div>
             <div class="flashcard-preview-right">
-              <p>"the translation comes here!"</p>
+              <% if flashcard.phrase_translation %>
+                <p><%= flashcard.phrase_translation %></p>
+              <% else %>
+                <p>"translation come here"</p>
+              <% end %>
             </div>
           </div>
           <% end %>
