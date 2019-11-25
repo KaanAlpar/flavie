@@ -8,7 +8,6 @@
     <div class="url-form">
       <%= simple_form_for @conversion do |f| %>
         <%= f.input :video_id, label: false %>
-        <%#= f.input :language, as: :radio_buttons, collection: ['Japanese', 'English'] %>
     </div>
     <div>
         <%= f.button :submit, "Get flashcards!", class: 'convert-button' %>
