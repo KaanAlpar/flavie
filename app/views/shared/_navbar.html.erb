@@ -1,12 +1,5 @@
 <div class="navbar fixed-top">
-  <%= link_to root_path do %>
-    <div class="column" id="logo">
-      <h3>Flavie</h3>
-      <h4 id="slogan">convert.choose.practice.</h4>
-    </div>
-  <% end %>
-
-  <ul class="nav-items <%= li_class %>">
+  <ul class="nav-items navbar-nav ml-auto <%= li_class %>">
     <% if user_signed_in? %>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Dashboard", dashboard_path %></li>
