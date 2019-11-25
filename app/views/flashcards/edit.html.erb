@@ -1,15 +1,14 @@
 <div class="container">
-  <div class="text-center d-flex align-items-start flex-column p-5 m-auto">
-    <div class="m-auto">
-      <h1 class="my-5">Flashcard Edit Page</h1>
-      <div class="flashcard d-flex flex-column h-100 p-5">
-        <%= simple_form_for @flashcard do |f| %>
-          <%= f.simple_fields_for :sentence do |s| %>
-            <%= s.input :content, input_html: {value: @flashcard.sentence.content} %>
-          <% end %>
-          <%= f.button :submit, value: "UPDATE", class: 'button-blue' %>
-        <% end %>
-      </div>
-    </div>
+  <h1 class="text-center">Editing Flashcard</h1>
+  <div class="flashcard d-flex flex-column h-100 p-5">
+    <%= simple_form_for @flashcard do |f| %>
+      <%= f.simple_fields_for :sentence do |s| %>
+        <%= s.label 'Front' %>
+        <%= s.input :content, input_html: {value: @flashcard.sentence.content}, label: false %>
+      <% end %>
+      <%= f.label 'Back' %>
+      <%= f.input :phrase_translation, label: false %>
+      <%= f.button :submit, 'submit', class: 'button-blue' %>
+    <% end %>
   </div>
 </div>

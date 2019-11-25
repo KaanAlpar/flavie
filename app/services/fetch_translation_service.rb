@@ -17,7 +17,9 @@ class FetchTranslationService
       request["x-rapidapi-key"] = ENV['WORDS_API_KEY']
 
       response = JSON.parse(http.request(request).read_body)
-      response['definitions'].map { |d| d['definition'] }
+      if response['definitions']
+        response['definitions'].map { |d| d['definition'] }
+      end
     else
       url = "https://jisho.org/api/v1/search/words?keyword=#{keyword}"
       doc = JSON.parse(RestClient.get(url).body)
