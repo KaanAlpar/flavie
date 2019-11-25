@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ['card']
+  static targets = ['card', 'article']
 
   connect() {
     this.showCard()
@@ -14,8 +14,11 @@ export default class extends Controller {
   }
 
   next() {
-    if (this.index < 999) {
-      console.log(this.index)
+    if (this.index === this.maxFlashcardIndex )
+      this.articleTargets.forEach((el) => {
+        el.classList.toggle('d-none');
+      })
+    else if (this.index < this.maxFlashcardIndex) {
       this.index++
     }
   }
@@ -28,6 +31,10 @@ export default class extends Controller {
 
   get index() {
     return parseInt(this.data.get('index'), 10)
+  }
+
+  get maxFlashcardIndex() {
+    return parseInt(this.data.get('max-number'), 10) - 1
   }
 
   set index(value) {
