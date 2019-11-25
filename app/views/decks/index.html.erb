@@ -1,14 +1,13 @@
 <div>
-  <div class="text-center mb-3">
+  <div class="blue-background">
     <% if session[:sentence_ids] %>
-      <h1>Choose a deck</h1>
+      <h1 class="my-decks">Choose a deck</h1>
       <%# session[:sentence_ids].each do |si| %>
         <!-- <p><%#= get_sentence(si).content %></p> -->
       <%# end %>
     <% else %>
   </div>
-
-  <div class="blue-background">
+    <div class="blue-background">
       <h1 class="my-decks">My Decks</h1>
     <% end %>
     <div class="white-container pt-5">
