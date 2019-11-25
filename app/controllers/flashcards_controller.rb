@@ -11,6 +11,7 @@ class FlashcardsController < ApplicationController
   end
 
   def update
+    raise
     authorize @flashcard
   end
 
@@ -25,6 +26,6 @@ class FlashcardsController < ApplicationController
   end
 
   def flashcard_params
-    # params.require(:flashcard).permit(:)
+    params.require(:flashcard).permit(:sentence, :phrase_translation)
   end
 end

@@ -7,7 +7,7 @@
     <div class="results-flashcards-container">
       <%= form_tag choose_deck_path do %>
       <ul class="flashcards-list p-0">
-         <% @conversion.sentences.reverse.each do |sentence| %>
+         <% @conversion.sentences.sort_by { |sentence| sentence.created_at }.each do |sentence| %>
           <li class="flashcard-list-item m-3">
             <span class="checkmark"></span>
 
