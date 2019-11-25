@@ -8,7 +8,12 @@ class FetchSentencesService
       doc.xpath("//transcript/text").each do |e|
         final += " #{e.text}"
       end
-      final.gsub!("\n", ' ')
+      # not working
+      # final.gsub!(/\(.*?\)/, '')
+      # final.gsub!('&quot;', '"')
+      # final.gsub!('&#39;', "'")
+      # final.gsub!('\n', ' ')
+
       raise Conversion::MissingSubtitlesError if final == "" # No subtitles
 
       PragmaticSegmenter::Segmenter.new(text: final, language: lang).segment
