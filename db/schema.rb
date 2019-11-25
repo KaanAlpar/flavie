@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_071356) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "language"
     t.index ["user_id"], name: "index_conversions_on_user_id"
   end
 
