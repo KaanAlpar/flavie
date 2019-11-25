@@ -7,13 +7,13 @@
 </div>
  -->
 
- <div class="flashcard" data-controller='flashcard' data-target='deck.card'>
-     <div class="flashcard-body">
-       <div class="flashcard-front">
-         <div class="flashcard-sentence">
-           <p><%= flashcard.sentence.content %></p>
-         </div>
+ <div class="flashcard p-5" data-controller='flashcard' data-target='deck.card'>
+   <div class="flashcard-body">
+     <div class="flashcard-front">
+       <div class="flashcard-sentence">
+         <p><%= flashcard.sentence.content %></p>
        </div>
+     </div>
      <div class="flashcard-back">
        <div class="flashcard-sentence">
          <p><%= flashcard.sentence.content %></p>
@@ -37,4 +37,4 @@
      <button class='button-blue mr-1' data-action='deck#next'>Good</button>
      <button class='button-blue mr-1' data-action='deck#next'>Hard</button>
   </footer>
- </div>
+</div>

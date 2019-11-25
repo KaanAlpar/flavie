@@ -1,16 +1,18 @@
 <div class="container mb-5">
-  <div>
-    <h1>Studying <%= @deck.name %></h1>
-  </div>
+  <div class="row p-5">
+    <div class="col-12 text-center">
+      <h1>Studying <%= @deck.name %></h1>
+    </div>
 
-  <div class="practice-area">
-    <div class='deck-main' data-controller='deck' data-deck-index="0">
-      <div class="deck-main-body">
-        <article>
-          <% @deck.flashcards.each do |fc| %>
-            <%= render 'shared/flashcard', flashcard: fc %>
-          <% end %>
-        </article>
+    <div class="col-12 practice-area">
+      <div class='deck-main' data-controller='deck' data-deck-index="0">
+        <div class="deck-main-body">
+          <article>
+            <% @deck.flashcards.each do |fc| %>
+              <%= render 'shared/flashcard', flashcard: fc %>
+            <% end %>
+          </article>
+        </div>
       </div>
     </div>
   </div>

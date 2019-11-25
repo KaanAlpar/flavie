@@ -1,10 +1,11 @@
 .practice-area {
   width: 1000px;
-  height: 600px;
+  // height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
 .flashcard-practice {
