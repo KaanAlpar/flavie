@@ -22,16 +22,16 @@
       <div class="container d-flex justify-content-center">
         <div class="filters-container">
           <h3 class="sort-by">Sort by</h3>
-          <p>Alphabetical</p>
-          <p>Number of cards</p>
+          <p><%= link_to 'Alphabetical', decks_path(sort: 'alphabetical') %></p>
+          <p><%= link_to 'Number of cards', decks_path(sort: 'numerical') %></p>
           <p>Language</p>
         </div>
           <div class="deck-cards-container m-5">
-            <% current_user.decks.each do |deck| %>
+            <% @decks.each do |deck| %>
             <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
             <div class="deck d-flex flex-column">
               <p class="deck-title deck-p text-center"><%= deck.name %></p>
-              <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
+              <p class="deck-p text-right">Total cards: <%= deck.flashcards.size %></p>
             </div>
             <% end %>
             <% end %>
