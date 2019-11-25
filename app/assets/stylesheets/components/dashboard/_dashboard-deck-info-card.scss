@@ -2,10 +2,9 @@
   background-color: $light-gray;
   background-position: center;
   min-height: 155px;
-  width: 400px;
+  min-width: 400px;
   display: flex;
   justify-content: start;
-  padding-left: 20px;
   font-size: 16px;
   border-style: solid;
   border-color: #E7E7E7;
@@ -13,13 +12,11 @@
   border-radius: 5px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   position: relative;
-  cursor: pointer;
-  transition: 0.2s;
 }
 
 .dashboard-flashcards-container {
   position: relative;
-  top: -125px;
+  top: 20px;
   border-radius: 4px;
   padding: 30px;
   text-align: center;
