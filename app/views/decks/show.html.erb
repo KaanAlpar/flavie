@@ -8,10 +8,16 @@
         <h2 class="mb-5"><%= @deck.flashcards.count %> flashcards</h2>
         <p><strong>Due review:</strong> number of cards to review</p>
         <p><strong>New:</strong> number of new cards in the deck</p>
-        <p><strong>Last studied:</strong> <%= @deck.flashcards.first.studied_at %></p>
+        <p><strong>Last studied:</strong> <%= @deck.flashcards.any? ? @deck.flashcards.first.studied_at : "0 Flashcards" %></p>
         <div class="d-flex justify-content-center">
-         <%= link_to practice_deck_path(@deck), class: 'button-blue align-items-center' do %>
-          Study now
+          <% if @deck.flashcards.any?  %>
+            <%= link_to practice_deck_path(@deck), class: 'button-blue align-items-center' do %>
+              Study now
+            <% end %>
+          <% else %>
+            <%= link_to root_path(@deck), class: 'button-blue align-items-center' do %>
+              Add Video
+            <% end %>
           <% end %>
         </div>
       </div>
