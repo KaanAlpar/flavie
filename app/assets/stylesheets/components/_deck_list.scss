@@ -6,7 +6,7 @@
 }
 
 .deck {
-  box-shadow: 5px 5px 8px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   background: $white;
   color: #495057;
   display: flex;
@@ -16,6 +16,10 @@
   border-radius: 5px;
   justify-content: center;
   margin: auto;
+  &:hover {
+    background-color: #7474f2;
+    text-shadow: 0px 1px #8b8bbc;
+  }
 }
 
 .my-decks {
@@ -50,8 +54,8 @@
 }
 
 .white-container {
-  margin: 0 10% 0 -5%;
-  background-color: $white;
+  margin: 0 5% 0 0;
+  background-color: $light-gray;
   border-radius: 0px;
   position: relative;
 }
@@ -59,9 +63,23 @@
 
 .filters-container {
   width: 20%;
-  margin: 10% 0 10% 5%;
-  font-size: 24px;
+  margin-top: 5%;
+  font-size: 20px;
   color: #86C1D2;
+  p {
+    padding: 4px 6px;
+  }
+}
+
+.filters-container a {
+  width: 20%;
+  margin-top: 5%;
+  font-size: 20px;
+  color: #5857B9;
+  &:hover {
+    color: #86C1D2;
+    text-decoration: none;
+  }
 }
 
 .sort-by {
