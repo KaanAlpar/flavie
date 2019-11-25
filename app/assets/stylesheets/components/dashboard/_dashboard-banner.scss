@@ -1,0 +1,17 @@
+.dashboard-banner {
+  background-color: #5957B9;
+  padding-bottom: 250px;
+  padding-top: 80px;
+  position: relative;
+}
+
+.back-layer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dashboard-banner-image {
+  position: absolute;
+  bottom: 0;
+  max-width: 1000px;
+}

@@ -1,17 +1,21 @@
 <div>
-  <div class="text-center mb-3">
+  <div class="blue-background">
     <% if session[:sentence_ids] %>
-      <h1>Choose a deck</h1>
+      <h1 class="my-decks">Choose a deck</h1>
       <%# session[:sentence_ids].each do |si| %>
         <!-- <p><%#= get_sentence(si).content %></p> -->
       <%# end %>
     <% else %>
   </div>
-
-  <div class="blue-background">
+    <div class="blue-background">
       <h1 class="my-decks">My Decks</h1>
     <% end %>
     <div class="white-container pt-5">
+      <div class="d-none d-md-block">
+         <div class="my-decks-banner-container">
+            <%= image_tag "https://www.chegg.com/flashcards/servestaticfiles/static/media/cp-sohp-footer-1500.0ef5a272.jpg", alt: "alttext", class:"my-decks-banner-image" %>
+        </div>
+      </div>
       <div class="form d-flex justify-content-center">
         <%= simple_form_for @deck, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
         <%#= f.label 'Add a new deck', class: 'mr-2' %>
@@ -22,16 +26,16 @@
       <div class="container d-flex justify-content-center">
         <div class="filters-container">
           <h3 class="sort-by">Sort by</h3>
-          <p>Alphabetical</p>
-          <p>Number of cards</p>
+          <p><%= link_to 'Alphabetical', decks_path(sort: 'alphabetical') %></p>
+          <p><%= link_to 'Number of cards', decks_path(sort: 'numerical') %></p>
           <p>Language</p>
         </div>
           <div class="deck-cards-container m-5">
-            <% current_user.decks.each do |deck| %>
+            <% @decks.each do |deck| %>
             <%= link_to deck_path(deck), class: 'text-decoration-none' do %>
             <div class="deck d-flex flex-column">
               <p class="deck-title deck-p text-center"><%= deck.name %></p>
-              <p class="deck-p text-right">Total cards: <%= deck.flashcards.count %></p>
+              <p class="deck-p text-right">Total cards: <%= deck.flashcards.size %></p>
             </div>
             <% end %>
             <% end %>
