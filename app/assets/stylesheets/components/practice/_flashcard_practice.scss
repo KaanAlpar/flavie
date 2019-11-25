@@ -24,3 +24,17 @@
 .practice-buttons {
   margin-top: 32px;
 }
+
+.flashcard-empty {
+  margin-top: 32px;
+  background: #E2E2E2;
+  padding: 6rem;
+  font-size: 2rem;
+  border-radius: 5px;
+  width: 720px;
+  // background: #c9c9c9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

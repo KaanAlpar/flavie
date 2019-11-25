@@ -5,12 +5,19 @@
     </div>
 
     <div class="col-12 practice-area">
-      <div class='deck-main' data-controller='deck' data-deck-index="0">
+      <div class='deck-main' data-controller='deck' data-deck-index="0" data-deck-max-number="<%= @deck.flashcards.count %>">
         <div class="deck-main-body">
-          <article>
+          <article data-target='deck.article'>
             <% @deck.flashcards.each do |fc| %>
               <%= render 'shared/flashcard', flashcard: fc %>
             <% end %>
+          </article>
+          <article class='d-none align-items-center p-5' data-target='deck.article'>
+            <h2 class="text-center mb-5">
+              You are done  <i class="fas fa-check" style="color: green;"></i>
+            </h2>
+            <%= link_to 'Back to MyDecks', decks_path, class: "button-blue p-2 mr-2" %>
+            <%= link_to 'Restart Deck', deck_path, class: "button-blue p-2 mr-1"  %>
           </article>
         </div>
       </div>
