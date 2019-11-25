@@ -4,6 +4,13 @@ class DecksController < ApplicationController
 
   def index
     @decks = policy_scope(Deck).where(user: current_user)
+    if params[:sort].present?
+      if params[:sort]['alphabetical']
+        @decks = @decks.order(:name)
+      elsif params[:sort]['numerical']
+        @decks = @decks.order(flashcards_count: :desc)
+      end
+    end
     @deck = Deck.new
   end
 
