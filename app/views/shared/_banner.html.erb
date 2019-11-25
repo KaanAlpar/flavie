@@ -7,7 +7,7 @@
   <div class="d-flex">
     <div class="url-form">
       <%= simple_form_for @conversion do |f| %>
-        <%= f.input :video_id, label: false, placeholder: 'https://www.youtube.com/watch?v=k34EJF923' %>
+        <%= f.input :video_id, label: false %>
     </div>
     <div>
         <%= f.button :submit, "Get flashcards!", class: 'convert-button' %>
