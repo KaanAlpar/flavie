@@ -2,24 +2,28 @@
   <h1><%= @conversion.video_title %></h1>
   <h2 class="result-description m-5">Choose the sentences you want to learn and click next.</h2>
 </div>
-<div class="background-light-yellow">
+<div class="background-white">
   <div class="results-flashcard-wrapper">
     <div class="results-flashcards-container">
       <%= form_tag choose_deck_path do %>
       <ul class="flashcards-list p-0">
          <% @conversion.sentences.sort_by { |sentence| sentence.created_at }.each do |sentence| %>
           <li class="flashcard-list-item m-3">
-            <span class="checkmark"></span>
+            <div class="checkbox">
+                <span class="results-flashcard">
+                  <span class="checkbox-container mr-3">
+                    <input id="checkbox-<%= sentence.id %>" type="checkbox" name ="sentence_ids[]" class="styled-checkbox" value="<%= sentence.id %>" >
+                    <label for="checkbox-<%= sentence.id %>" class="checkbox-label"></label>
+                  </span>
+                  <p>
 
-            <label>
-              <input type="checkbox" name ="sentence_ids[]" value="<%= sentence.id %>" >
-              <span class="results-flashcard"> <p><%= sentence.content %></p></span>
-              <span class="checkmark"></span>
-            </label>
+                  <%= sentence.content %>
+                </p></span>
+            </div>
           </li>
           <% end %>
         </ul>
-        <%= submit_tag "Add sentences to a deck", class:"button-orange-hover button-fixed" %>
+        <%= submit_tag "Add sentences to a deck", class:"button-orange button-fixed" %>
       <% end %>
     </div>
   </div>
