@@ -21,14 +21,18 @@
           <% end %>
         </div>
       </div>
-      <div class="flashcard-container p-3" data-controller='flashcardpreview'>
+      <div class="flashcard-container p-3">
         <% @deck.flashcards.each do |flashcard| %>
           <div class="flashcard-preview m-3">
             <div class="flashcard-preview-left">
               <%= flashcard.sentence.content %>
             </div>
             <div class="flashcard-preview-right">
-                <p>"translation comes here"</p>
+                <% if flashcard.phrase_translation == nil || flashcard.phrase_translation == "" %>
+                  <p>"translation comes here"</p>
+                <% else %>
+                  <p><%= flashcard.phrase_translation %></p>
+                <% end %>
             </div>
             <%= link_to edit_flashcard_path(flashcard), class: 'button-blue' do %>
               edit

@@ -1,6 +1,13 @@
 <div class="container">
   <h1 class="text-center">Editing Flashcard</h1>
-  <div class="flashcard d-flex flex-column h-100 p-5">
+  <%= simple_form_for :translation, url: get_translation_path, remote: true do |f| %>
+    <% col = @flashcard.sentence.content.split(' ').map { |s| s.gsub(/[!.,?]/, '')} %>
+    <p>Add translation</p>
+    <%= f.input :keyword, collection: col, label: false %>
+    <%= f.submit "add", class: 'button-blue' %>
+  <% end %>
+
+  <div class="flashcard d-flex flex-column mb-5">
     <%= simple_form_for @flashcard do |f| %>
       <%= f.simple_fields_for :sentence do |s| %>
         <%= s.label 'Front' %>
