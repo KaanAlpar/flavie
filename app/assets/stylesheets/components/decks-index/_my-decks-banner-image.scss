@@ -1,10 +1,14 @@
 
 .my-decks-banner-image {
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .my-decks-banner-container {
   position: absolute;
-  top: -144px;
+  top: -250px;
   right: -12px;
+}
+
+.white-block {
+  position: fixed;
 }
