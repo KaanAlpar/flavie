@@ -1,8 +1,8 @@
 .results-flashcard {
   background-color: $light-gray;
   background-position: center;
-  min-height: 105px;
-  width: 650px;
+  width: 900px;
+  padding: 8px;
   display: flex;
   justify-content: start;
   padding-left: 20px;
@@ -23,31 +23,41 @@
   }
 }
 
+.results-flashcard p {
+  margin-bottom: 0;
+}
+
 .results-flashcard input {
   display:none;
 }
 
- input:checked + .results-flashcard {
-    background-color: #CDC0FD;
-    box-shadow: 3 2 2 4px rgba(0,0,1,0.8);
-    // Uncomment if you prefer a border
-    // box-shadow:0px 0px 0px 3px green inset;
-  }
-
-.flashcard-list-item input {
-  display:none;
+.checkbox input + label {
+      height: 32px;
+      width: 32px;
+      border: 3px solid #86C1D2;
+      border-radius: 4px;
+      margin: 0;
+      display: inline-block;
+      overflow: hidden;
 }
 
-.checkmark {
-  height: 50px;
-  width: 50px;
-  background-color: #eee;
+.checkbox input:checked + label {
+  background-color: #86C1D2;
+}
+
+.checkbox input:checked + label {
+  &:after {
+      content: "";
+      display: inline-block;
+      height: 12px;
+      width: 20px;
+      margin-left: 2px;
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      transform: rotate(-45deg);
+  }
 }
 
 .flashcards-list {
   list-style: none;
-}
-
-.results-description {
-  // color: &gray;
 }
