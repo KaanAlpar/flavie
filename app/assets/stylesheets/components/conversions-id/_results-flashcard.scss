@@ -16,6 +16,11 @@
   position: relative;
   cursor: pointer;
   transition: 0.2s;
+  &:hover {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transform: scale(1.02);
+  }
 }
 
 .results-flashcard input {
@@ -23,7 +28,7 @@
 }
 
  input:checked + .results-flashcard {
-    background-color: #73ef92;
+    background-color: #CDC0FD;
     box-shadow: 3 2 2 4px rgba(0,0,1,0.8);
     // Uncomment if you prefer a border
     // box-shadow:0px 0px 0px 3px green inset;
@@ -41,12 +46,6 @@
 
 .flashcards-list {
   list-style: none;
-}
-
-.results-flashcard:hover {
-  opacity: 1;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  transform: scale(1.02);
 }
 
 .results-description {
