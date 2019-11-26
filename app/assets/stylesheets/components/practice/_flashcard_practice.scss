@@ -8,14 +8,21 @@
   overflow: scroll;
 }
 
+.flashcard-body {
+  background-color: #ece8fa;
+  box-shadow: 1px 1px 2px $gray;
+}
+
+.flashcard--flipped .flashcard-body {
+  background-color: #ded4fc;
+}
 .flashcard-practice {
-  background: white;
+  // background: white;
   padding: 6rem;
   font-size: 2rem;
-  border-radius: 5px;
+  border-radius: 4px;
   width: 720px;
   background: #c9c9c9;
-
   display: flex;
   justify-content: center;
   align-items: center;
