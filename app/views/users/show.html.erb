@@ -6,21 +6,25 @@
       <h4>Edit your profile and settings</h4>
     </div>
     <div class="dashboard-deck-card m-3 d-flex justify-content-center">
+      <%= link_to "/decks" do %>
         <div class="dashboard-deck-count text-center pt-3 pb-3 m-4">
            <h4>decks</h4>
           <i class="far fa-sticky-note icon m-2"></i>
           <h4><%= Deck.count %></h4>
         </div>
+      <% end %>
         <div class="dashboard-flashcard-count text-center pt-3 pb-3 m-4">
           <h4>flashcards</h4>
           <i class="far fa-clone icon m-2"></i>
           <h4><%= Flashcard.count %></h4>
         </div>
-        <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
-          <h4>success rate</h4>
-          <i class="far fa-check-circle icon m-2"></i>
-          <h4> 82% </h4>
-        </div>
+        <%= link_to anchor: "stats" do %>
+          <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
+            <h4>success rate</h4>
+            <i class="far fa-check-circle icon m-2"></i>
+            <h4> 82% </h4>
+          </div>
+        <% end %>
     </div>
 
   </div>
@@ -42,6 +46,6 @@
   </div>
   <div class="text-center p-5">
      <h2>statistics coming soon...</h2>
-    <%= image_tag "https://cdn.iconscout.com/icon/premium/png-256-thumb/statistics-16-157667.png", alt: "alttext", class:"practice-flashcard-image mr-3" %>
+    <%= image_tag "/assets/graph-2d8fc5b29891bda103ac74bdfb28c812383adf6ded1551ec665d9b0cfe248f92.svg", alt: "alttext", id:"stats",  class:"practice-flashcard-image mr-5" %>
   </div>
 </div>
