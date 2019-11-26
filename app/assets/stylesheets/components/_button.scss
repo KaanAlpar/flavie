@@ -34,17 +34,6 @@
   cursor: pointer;
 }
 
-.button-orange {
-  background-color: #F3934D;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 2px;
-  cursor: pointer;
-}
-
 .button-orange:hover {
   transform: scale(1.02);
 }
@@ -103,10 +92,3 @@
   bottom: 240px;
   right: 80px;
 }
-
-// @media screen and (max-width: 800px) and (min-width: 500px) {
-//   .button-orange {
-//   position: fixed;
-//   right: 0;
-//   }
-// }
