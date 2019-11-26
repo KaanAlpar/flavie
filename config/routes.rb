@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     end
   end
   resources :flashcards, only: [:edit, :update, :destroy]
+  post '/get_translation', to: 'flashcards#get_translation'
 end
