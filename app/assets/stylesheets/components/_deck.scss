@@ -10,6 +10,12 @@
   justify-content: space-between;
   align-items: center;
   transition: 0.2s ease;
+  a {
+    &:hover {
+      background-color: #7853fc;
+    }
+  }
+
 }
 
 .deck-header {
@@ -31,9 +37,7 @@
   margin: 0;
 }
 
-.deck:hover {
-  background: #8eb6ff;
-}
+
 
 // PRACTICE PAGE
 
