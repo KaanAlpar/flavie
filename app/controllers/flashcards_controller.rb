@@ -11,7 +11,6 @@ class FlashcardsController < ApplicationController
   end
 
   def update
-    raise
     authorize @flashcard
   end
 
