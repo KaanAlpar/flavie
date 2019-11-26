@@ -6,24 +6,29 @@
   <div class="results-flashcard-wrapper">
     <div class="results-flashcards-container">
       <%= form_tag choose_deck_path do %>
-      <ul class="flashcards-list p-0">
-         <% @conversion.sentences.sort_by { |sentence| sentence.created_at }.each do |sentence| %>
-          <li class="flashcard-list-item m-3">
-            <div class="checkbox">
-                <span class="results-flashcard">
-                  <span class="checkbox-container mr-3">
-                    <input id="checkbox-<%= sentence.id %>" type="checkbox" name ="sentence_ids[]" class="styled-checkbox" value="<%= sentence.id %>" >
-                    <label for="checkbox-<%= sentence.id %>" class="checkbox-label"></label>
-                  </span>
-                  <p>
-
-                  <%= sentence.content %>
-                </p></span>
-            </div>
-          </li>
-          <% end %>
-        </ul>
-        <%= submit_tag "Add sentences to a deck", class:"button-orange button-fixed" %>
+      <div id="conversions-main">
+        <div class="sentences">
+          <ul class="flashcards-list p-0">
+             <% @conversion.sentences.sort_by { |sentence| sentence.created_at }.each do |sentence| %>
+              <li class="flashcard-list-item m-3">
+                <div class="checkbox">
+                    <span class="results-flashcard">
+                      <span class="checkbox-container mr-3">
+                        <input id="checkbox-<%= sentence.id %>" type="checkbox" name ="sentence_ids[]" class="styled-checkbox" value="<%= sentence.id %>" >
+                        <label for="checkbox-<%= sentence.id %>" class="checkbox-label"></label>
+                      </span>
+                      <p>
+                      <%= sentence.content %>
+                    </p></span>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+          <div id="conversion-button">
+            <%= submit_tag "Add sentences to a deck", class:"button-orange" %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
