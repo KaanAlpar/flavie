@@ -1,13 +1,9 @@
 .dashboard-info-box {
   background-color: $light-gray;
   background-position: center;
-  min-height: 155px;
-  width: 400px;
   display: flex;
-  justify-content: start;
-  border-style: solid;
-  border-color: #E7E7E7;
-  border-width: 1px;
+  justify-content: center;
+  border: solid #e7e7e7 1px;
   border-radius: 5px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   position: relative;

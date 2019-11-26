@@ -13,37 +13,54 @@
           <h4><%= Deck.count %></h4>
         </div>
       <% end %>
+      <%= link_to "#", anchor: "stats" do %>
         <div class="dashboard-flashcard-count text-center pt-3 pb-3 m-4">
           <h4>flashcards</h4>
           <i class="far fa-clone icon m-2"></i>
           <h4><%= Flashcard.count %></h4>
         </div>
-        <%= link_to anchor: "stats" do %>
-          <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
-            <h4>success rate</h4>
-            <i class="far fa-check-circle icon m-2"></i>
-            <h4> 82% </h4>
-          </div>
-        <% end %>
+      <% end %>
+      <%= link_to anchor: "stats" do %>
+        <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
+          <h4>success rate</h4>
+          <i class="far fa-check-circle icon m-2"></i>
+          <h4> 82% </h4>
+        </div>
+      <% end %>
     </div>
 
   </div>
-  <div class="dashboard-flashcards-container">
-    <div class="d-flex justify-content-around">
-      <div class="align-items-around flex-column dashboard-info-box p-4">
+  <div class="d-flex flex-row justify-content-center">
+    <div class="d-flex flex-row dashboard-flashcards-container">
+      <div class="align-items-around flex-column dashboard-info-box m-4 p-4 w-100">
         <h4>Profile Information</h4>
-        <%= link_to "change", '#', class: "button-green m-3" %>
+        <%= link_to "edit", '#', class: "button-blue m-3" %>
       </div>
-      <div class="align-items-around flex-column dashboard-info-box p-4">
+      <div class="align-items-around flex-column dashboard-info-box m-4 p-4 w-100">
         <h4>Settings</h4>
-        <%= link_to "change", '#', class: "button-green m-3" %>
+        <%= link_to "change", '#', class: "button-blue m-3" %>
       </div>
-      <div class="align-items-around flex-column dashboard-info-box p-4">
+      <div class="align-items-around flex-column dashboard-info-box m-4 p-4 w-100">
         <h4> Frequently Asked Questions</h4>
-        <%= link_to "FAQ", '#', class: "button-green m-3" %>
+        <%= link_to "FAQ", '#', class: "button-blue m-3" %>
       </div>
     </div>
   </div>
+
+  <div class="d-flex justify-content-center p-5">
+    <div class="d-flex align-items-center dashboard-deck-display p-5 mt-5 w-100">
+      <h3>My Decks Preview</h3>
+      <% @decks.each do |deck| %>
+        <%= link_to deck_path(deck) do  %>
+          <div class="dashboard-info-box p-5">
+           <h4><%= deck.name %></h4>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
   <div class="text-center p-5">
      <h2>statistics coming soon...</h2>
     <%= image_tag "/assets/graph-2d8fc5b29891bda103ac74bdfb28c812383adf6ded1551ec665d9b0cfe248f92.svg", alt: "alttext", id:"stats",  class:"practice-flashcard-image mr-5" %>

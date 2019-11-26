@@ -5,5 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @conversion = Conversion.new
+    @decks = current_user.decks.order("lower(name) ASC")
   end
 end
