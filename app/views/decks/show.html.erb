@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="flashcard-container p-3">
-        <% @deck.flashcards.each do |flashcard| %>
+        <% @deck.flashcards.sort_by{ |f| f.created_at }.each do |flashcard| %>
           <div class="flashcard-preview m-3">
             <div class="flashcard-preview-left">
               <%= flashcard.sentence.content %>

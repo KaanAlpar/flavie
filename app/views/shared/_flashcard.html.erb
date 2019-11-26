@@ -1,12 +1,3 @@
-<!-- <div class="flashcard d-flex flex-column h-100 p-5">
-  <h3><u>Deck Name:</u> <strong><%#= @flashcard.deck.name  %></strong></h3>
-  <h4><u>Sentence:</u> </h4>
-  <h5><%#= @flashcard.sentence.content %></h5>
-  <p><u> This flashcard was reated at: </u></p>
-  <p><%#= @flashcard.created_at %></p>
-</div>
- -->
-
  <div class="flashcard p-5" data-controller='flashcard' data-target='deck.card'>
    <div class="flashcard-body">
      <div class="flashcard-front">
@@ -21,7 +12,9 @@
        <div class="flashcard-translation">
          <% unless flashcard.phrase_translation.blank? %>
           <p></p>
-          <p><%= flashcard.phrase_translation %></p>
+          <% flashcard.phrase_translation.split("\r\n").each do |tr| %>
+            <p><%= tr %></p>
+          <% end %>
         <% else %>
           <p>Translation goes here</p>
          <% end %>
