@@ -1,11 +1,11 @@
- <div class="flashcard p-5" data-controller='flashcard' data-target='deck.card'>
-   <div class="flashcard-body">
-     <div class="flashcard-front">
+ <div class="flip" data-controller='flashcard' data-action="click->flashcard#flip">
+   <div class="card" data-target='flashcard.card'>
+     <div class="face front">
        <div class="flashcard-sentence">
          <p><%= flashcard.sentence.content %></p>
        </div>
      </div>
-     <div class="flashcard-back">
+     <div class=" face back">
        <div class="flashcard-sentence">
          <p><%= flashcard.sentence.content %></p>
        </div>
@@ -22,7 +22,7 @@
      </div>
    </div>
    <footer class='flashcard-front-footer'>
-     <button class='button-blue' data-action='flashcard#flip'>Flip</button>
+     <button class='button-blue' id='flashcard-flip' data-action='flashcard#flip'>Flip</button>
    </footer>
    <footer class='flashcard-back-footer'>
      <button class='button-red mr-1' data-action='flashcard#flip'>Again</button>
