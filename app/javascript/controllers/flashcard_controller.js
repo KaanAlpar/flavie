@@ -4,6 +4,6 @@ export default class extends Controller {
   static targets = ['card'];
 
   flip() {
-    this.cardTarget.classList.toggle('flipped')
+    this.element.classList.toggle('flashcard--flipped')
   }
 }
