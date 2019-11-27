@@ -1,12 +1,16 @@
+.studying-deck-title h3 {
+  font-weight: bold;
+  font-family: "Lato", "Helvetica", "sans-serif";
+  color: $blue;
+}
+
 .practice-area {
-  // width: 100vw;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   overflow: hidden;
-  background: #e2e2e2;
+  background: #FAFAFA;
 }
 
 .flashcard-practice {
@@ -31,7 +35,6 @@
   font-size: 2rem;
   border-radius: 5px;
   width: 720px;
-  // background: #c9c9c9;
 
   display: flex;
   justify-content: center;
