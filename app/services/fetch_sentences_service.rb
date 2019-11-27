@@ -11,6 +11,7 @@ class FetchSentencesService
 
     final.gsub!(/\n/, ' ')
     final.gsub!(/\(.*?\)/, '')
+    final.gsub!('-- ', '')
 
     segmented = PragmaticSegmenter::Segmenter.new(text: final).segment
 
