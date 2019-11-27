@@ -1,12 +1,16 @@
 class FetchSentencesService
-  def self.call_api(video_id)
-    url = "http://video.google.com/timedtext?lang=en&v=#{video_id}"
+  def self.call_api(video_id, language)
+    url = "http://video.google.com/timedtext?lang=#{language}&v=#{video_id}"
     doc = Nokogiri::XML(RestClient.get(url).body)
 
     raise Conversion::MissingSubtitlesError if doc.css("transcript text").empty?
 
     array_elements = doc.css("transcript text").map do |node|
-      clean_content = node.children.text.gsub(/\n/, ' ').gsub(/\(.*?\)/, '').gsub(/\[.*?\]/, '').gsub('&quot;', '').gsub('&#39;', "'")
+      if language == 'ja'
+        clean_content = node.children.text.gsub(' ', '.').gsub('  ', '.')
+      else
+        clean_content = node.children.text.gsub(/\n/, ' ').gsub(/\(.*?\)/, '').gsub(/\[.*?\]/, '').gsub('&quot;', '').gsub('&#39;', "'")
+      end
       { start: node.attributes['start'].value, content: clean_content }
     end
 

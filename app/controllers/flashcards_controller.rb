@@ -25,7 +25,7 @@ class FlashcardsController < ApplicationController
   end
 
   def get_translation
-    @translation = FetchTranslationService.call_api(params[:translation][:keyword], 'en')
+    @translation = FetchTranslationService.call_api(params[:translation][:keyword], 'ja')
     @word = params[:translation][:keyword]
   end
 
