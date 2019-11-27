@@ -50,6 +50,7 @@
   <div class="d-flex justify-content-center p-5">
     <div class="d-flex align-items-center dashboard-deck-display p-5 mt-5 w-100">
       <h3>My Decks Preview</h3>
+      <div class="dashboard-decks-preview">
       <% @decks.each do |deck| %>
         <%= link_to deck_path(deck) do  %>
           <div class="dashboard-info-box p-5">
@@ -57,6 +58,7 @@
           </div>
         <% end %>
       <% end %>
+    </div>
     </div>
   </div>
 
