@@ -1,0 +1,9 @@
+.dashboard-decks-preview {
+display: grid;
+ grid-template-columns: 400px 400px;
+}
+
+.dashboard-decks-preview .dashboard-info-box {
+height: 80px;
+text-align: center;
+}
