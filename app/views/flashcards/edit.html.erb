@@ -6,9 +6,10 @@
     <%#= f.input :keyword, collection: col, label: false %>
     <%#= f.submit "add", class: 'button-blue' %>
   <%# end %>
+
   <h3>Front</h3>
   <div data-controller="flashcardedit">
-    <div id="frontSelectWord">
+    <div id="frontSelectWord" class="my-3">
       <div class="flashcard-edit-front">
         <% @flashcard.sentence.content.split(' ').each do |word| %>
           <%= button_to get_translation_path, method: :post, remote: true, params: { translation: {keyword: word.gsub(/[!.,?]/, '')} }, form_class: 'flashcard-edit-form', class: 'button-text' do %>

@@ -1,4 +1,10 @@
 console.log('<%= @translation.first %>');
 
 back_text_area = document.getElementById('flashcard_phrase_translation');
-back_text_area.value += '\n<%= @word.downcase %>: <%= @translation.first %>';
+
+if (back_text_area.value === "") {
+  back_text_area.value += '<%= @word.downcase %>: <%= @translation.first %>';
+}
+else {
+  back_text_area.value += '\n<%= @word.downcase %>: <%= @translation.first %>';
+}
