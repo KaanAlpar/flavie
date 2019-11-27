@@ -1,19 +1,20 @@
 .flashcard {
   color: black;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: none;
   &-translation {
-    color: blue;
+    color: $purple;
   }
   &-sentence {
-    color: black;
+    color: gray;
   }
   &-body {
     display: flex;
     border-radius: 8px;
     justify-content: space-around;
     align-items: center;
-    padding: 100px 100px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    padding: 50px;
     background: #FAFAFA;
     min-width: 160px;
   }
