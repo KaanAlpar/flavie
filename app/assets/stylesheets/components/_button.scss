@@ -140,3 +140,17 @@
   bottom: 240px;
   right: 80px;
 }
+
+.button-text {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  &:hover {
+    color: #7853FC;
+  }
+}
+
+.flashcard-edit-form {
+  display: inline;
+}

@@ -4,10 +4,17 @@
 </div>
 <div class="background-white">
   <div class="results-flashcard-wrapper">
-    <div class="results-flashcards-container">
       <%= form_tag choose_deck_path do %>
       <div id="conversions-main">
-        <div class="sentences">
+        <div class="results-video">
+        <iframe id="player" type="text/html" width="540" height="320"
+          src="https://www.youtube.com/embed/<%= @conversion.video_id %>?start=0"
+          frameborder="0"></iframe>
+        </div>
+        <div id="conversion-button">
+            <%= submit_tag "Add sentences to a deck", class:"button-orange" %>
+          </div>
+
           <ul class="flashcards-list p-0">
              <% @conversion.sentences.sort_by { |sentence| sentence.created_at }.each do |sentence| %>
               <li class="flashcard-list-item m-3">
@@ -24,12 +31,8 @@
               </li>
               <% end %>
             </ul>
-          </div>
-          <div id="conversion-button">
-            <%= submit_tag "Add sentences to a deck", class:"button-orange" %>
-          </div>
         </div>
       <% end %>
-    </div>
+
   </div>
 </div>

@@ -1,6 +1,6 @@
 .flashcard {
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: none;
   &-translation {
     color: $purple;
@@ -17,6 +17,11 @@
     padding: 50px;
     background: #FAFAFA;
     min-width: 160px;
+    -webkit-perspective: 800;
+    width: 1000px;
+    height: 600px;
+    position: relative;
+    margin: 50px auto;
   }
   &-front {
   }

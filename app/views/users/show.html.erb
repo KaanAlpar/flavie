@@ -3,46 +3,23 @@
     <%= image_tag "flashcards_newest.png", alt: "Flashcards graphic", class:"dashboard-banner-image" %>
     <div class="ml-5 mt-3 text-white">
       <h1>My dashboard</h1>
-      <h4>Edit your profile and settings</h4>
+      <h4>Settings and summary of your progress</h4>
     </div>
     <div class="dashboard-deck-card m-3 d-flex justify-content-center">
-      <%= link_to "/decks" do %>
-        <div class="dashboard-deck-count text-center pt-3 pb-3 m-4">
-           <h4>decks</h4>
-          <i class="far fa-sticky-note icon m-2"></i>
-          <h4><%= Deck.count %></h4>
-        </div>
-      <% end %>
-      <%= link_to "#", anchor: "stats" do %>
-        <div class="dashboard-flashcard-count text-center pt-3 pb-3 m-4">
-          <h4>flashcards</h4>
-          <i class="far fa-clone icon m-2"></i>
-          <h4><%= Flashcard.count %></h4>
-        </div>
-      <% end %>
-      <%= link_to anchor: "stats" do %>
-        <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
-          <h4>success rate</h4>
-          <i class="far fa-check-circle icon m-2"></i>
-          <h4> 82% </h4>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
-  <div class="d-flex flex-row justify-content-center">
-    <div class="d-flex flex-row dashboard-flashcards-container">
-      <div class="align-items-around flex-column dashboard-info-box m-4 p-4 w-100">
-        <h4>Profile Information</h4>
-        <%= link_to "edit", '#', class: "button-blue m-3" %>
+      <div class="dashboard-deck-count text-center pt-3 pb-3 m-4">
+         <h4>decks</h4>
+        <i class="far fa-sticky-note icon m-2"></i>
+        <h4><%= current_user.decks.count %></h4>
       </div>
-      <div class="align-items-around flex-column dashboard-info-box m-4 p-4 w-100">
-        <h4>Settings</h4>
-        <%= link_to "change", '#', class: "button-blue m-3" %>
+      <div class="dashboard-flashcard-count text-center pt-3 pb-3 m-4">
+        <h4>flashcards</h4>
+        <i class="far fa-clone icon m-2"></i>
+        <h4>432</h4>
       </div>
-      <div class="align-items-around flex-column dashboard-info-box m-4 p-4 w-100">
-        <h4> Frequently Asked Questions</h4>
-        <%= link_to "FAQ", '#', class: "button-blue m-3" %>
+      <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
+        <h4>success rate</h4>
+        <i class="far fa-check-circle icon m-2"></i>
+        <h4> 82% </h4>
       </div>
     </div>
   </div>

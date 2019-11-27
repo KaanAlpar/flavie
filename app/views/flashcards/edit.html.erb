@@ -1,21 +1,37 @@
 <div class="container">
   <h1 class="text-center">Editing Flashcard</h1>
-  <%= simple_form_for :translation, url: get_translation_path, remote: true do |f| %>
-    <% col = @flashcard.sentence.content.split(' ').map { |s| s.gsub(/[!.,?]/, '')} %>
-    <p>Add translation</p>
-    <%= f.input :keyword, collection: col, label: false %>
-    <%= f.submit "add", class: 'button-blue' %>
-  <% end %>
+  <%#= simple_form_for :translation, url: get_translation_path, remote: true do |f| %>
+    <%# col = @flashcard.sentence.content.split(' ').map { |s| s.gsub(/[!.,?]/, '')} %>
+    <!-- <p>Add translation</p> -->
+    <%#= f.input :keyword, collection: col, label: false %>
+    <%#= f.submit "add", class: 'button-blue' %>
+  <%# end %>
 
-  <div class="flashcard d-flex flex-column mb-5">
-    <%= simple_form_for @flashcard do |f| %>
-      <%= f.simple_fields_for :sentence do |s| %>
-        <%= s.label 'Front' %>
-        <%= s.input :content, input_html: {value: @flashcard.sentence.content}, label: false %>
-      <% end %>
-      <%= f.label 'Back' %>
+  <h3>Front</h3>
+  <div data-controller="flashcardedit">
+    <div id="frontSelectWord" class="my-3">
+      <div class="flashcard-edit-front">
+        <% @flashcard.sentence.content.split(' ').each do |word| %>
+          <%= button_to get_translation_path, method: :post, remote: true, params: { translation: {keyword: word.gsub(/[!.,?]/, '')} }, form_class: 'flashcard-edit-form', class: 'button-text' do %>
+            <%= word %>
+          <% end %>
+        <% end %>
+      </div>
+      <button class="btn btn-outline-primary d-inline ml-2" type="button" data-action="flashcardedit#toggleEdit">
+        edit
+      </button>
+    </div>
+  <div class="d-flex flex-column mb-5">
+    <div class="d-none" id="frontInput">
+      <%= simple_form_for @flashcard do |f| %>
+        <%= f.simple_fields_for :sentence do |s| %>
+          <%= s.input :content, input_html: {value: @flashcard.sentence.content}, label: false %>
+        <% end %>
+    </div>
+      <h3>Back</h3>
       <%= f.input :phrase_translation, label: false %>
       <%= f.button :submit, 'submit', class: 'button-blue' %>
     <% end %>
+  </div>
   </div>
 </div>
