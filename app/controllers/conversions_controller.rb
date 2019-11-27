@@ -7,9 +7,9 @@ class ConversionsController < ApplicationController
       video_id = CGI::parse(URI(url).query)["v"].first
       video_info = FetchVideoInfoService.call_api(video_id)
       @conversion = Conversion.find_or_create_by(video_id: video_id, user: current_user, video_title: video_info[:title]) do |conversion|
-        sentences = FetchSentencesService.call_api(video_id, params[:language])
+        sentences_attributes = FetchSentencesService.call_api(video_id, params[:language])
         params_new = { conversion: {
-          sentences_attributes: sentences.map { |sentence| { content: sentence } }
+          sentences_attributes: sentences_attributes
         } }
 
         conversion.assign_attributes(params_new[:conversion])
