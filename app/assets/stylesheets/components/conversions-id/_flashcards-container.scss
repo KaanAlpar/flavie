@@ -1,24 +1,19 @@
-.results-flashcards-container {
-  position: relative;
-  top: -125px;
-  border-radius: 4px;
-  background: $white;
-  padding: 10px;
-  text-align: center;
+.flashcards-container {
+  margin-top: 90px;
+  margin-left: 800px;
+  padding-top: 20px;
 }
 
 #conversions-main {
-  display: block;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 #conversions-main .button-orange {
-  position: fixed;
-  padding: 30px;
-  bottom: 80px;
+  // position: fixed;
+  // padding: 30px;
+  // bottom: 80px;
   border: none;
-  right: 120px;
+  left: 120px;
   display: block;
   justify-content: center;
   align-items: center;
