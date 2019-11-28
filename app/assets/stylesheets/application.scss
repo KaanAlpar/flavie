@@ -13,6 +13,10 @@
 @import "pages/index";
 @import "components/deck_list";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 70px;
 }

@@ -4,7 +4,7 @@ const initVideoScroll = () => {
 
   window.addEventListener('scroll', (event) => {
     var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop
-    if (scrollPos > 315) {
+    if (scrollPos > 510) {
       video.classList.add('results-video--fixed')
       flashcard.classList.add('flashcards-home-container--fixed')
     } else {
