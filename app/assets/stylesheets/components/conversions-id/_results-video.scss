@@ -1,7 +1,6 @@
 .results-video {
-  position: fixed;
-  top: 542px;
-  left: 17px;
+  display: flex;
+  justify-content: center;
 }
 
 @media(max-width: 1768px) {
