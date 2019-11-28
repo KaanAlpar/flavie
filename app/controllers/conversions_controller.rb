@@ -17,9 +17,9 @@ class ConversionsController < ApplicationController
     rescue Conversion::MissingSubtitlesError
       @conversion = Conversion.new
       @conversion.errors.add(:video_id, 'No subtitles avaliable for this video. Please try a different one.')
-    rescue NoMethodError
-      @conversion = Conversion.new(video_id: url)
-      @conversion.errors.add(:video_id, 'Invalid information. URL could not be reached.')
+    # rescue NoMethodError
+    #   @conversion = Conversion.new(video_id: url)
+    #   @conversion.errors.add(:video_id, 'Invalid information. URL could not be reached.')
     end
 
     authorize @conversion
