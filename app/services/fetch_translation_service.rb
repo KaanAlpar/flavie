@@ -20,9 +20,9 @@ class FetchTranslationService
       if response['definitions']
         response['definitions'].map { |d| d['definition'] }
       end
-    else
+    elsif lang == 'ja'
       url = "https://jisho.org/api/v1/search/words?keyword=#{keyword}"
-      doc = JSON.parse(RestClient.get(url).body)
+      doc = JSON.parse(RestClient.get(Addressable::URI.parse(url).normalize.to_str).body)
       doc['data'].first['senses'].map do |d|
         d['english_definitions'].map do |ed|
           ed

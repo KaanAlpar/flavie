@@ -9,7 +9,7 @@ class ConversionsController < ApplicationController
       @conversion = Conversion.find_or_create_by(video_id: video_id, user: current_user, video_title: video_info[:title]) do |conversion|
         sentences_attributes = FetchSentencesService.call_api(video_id, params[:language])
         params_new = { conversion: {
-          sentences_attributes: sentences_attributes
+          sentences_attributes: sentences_attributes, language: params[:language]
         } }
 
         conversion.assign_attributes(params_new[:conversion])

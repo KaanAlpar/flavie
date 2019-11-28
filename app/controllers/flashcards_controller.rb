@@ -1,5 +1,5 @@
 class FlashcardsController < ApplicationController
-  before_action :set_flashcard, only: [:update, :edit, :destroy]
+  before_action :set_flashcard, only: [:update, :edit, :destroy, :get_translation]
   skip_after_action :verify_authorized, only: [:get_translation]
 
   def create
@@ -9,6 +9,13 @@ class FlashcardsController < ApplicationController
 
   def edit
     authorize @flashcard
+    lang = @flashcard.sentence.conversion.language
+    if lang == 'en'
+      @words = @flashcard.sentence.content.split(' ')
+    elsif lang == 'ja'
+      ts = TinySegmenter.new
+      @words = ts.segment(@flashcard.sentence.content, ignore_punctuation: true)
+    end
   end
 
   def update
@@ -25,7 +32,12 @@ class FlashcardsController < ApplicationController
   end
 
   def get_translation
-    @translation = FetchTranslationService.call_api(params[:translation][:keyword], 'en')
+    @lang = @flashcard.sentence.conversion.language
+    if @lang == 'en'
+      @translation = FetchTranslationService.call_api(params[:translation][:keyword], 'en')
+    else
+      @translation = FetchTranslationService.call_api(params[:translation][:keyword], 'ja')
+    end
     @word = params[:translation][:keyword]
   end
 
