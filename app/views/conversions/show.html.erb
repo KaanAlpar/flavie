@@ -7,17 +7,19 @@
       <%= form_tag choose_deck_path do %>
       <div id="conversions-main">
         <div class="results-video">
-        <iframe id="player" type="text/html" width="540" height="320"
-          src="https://www.youtube.com/embed/<%= @conversion.video_id %>?start=0"
-          frameborder="0"></iframe>
+        <!-- <iframe id="player" type="text/html" width="540" height="320"
+          src="https://www.youtube.com/embed/<%#= @conversion.video_id %>?start=0"
+          frameborder="0"></iframe> -->
+          <div id="player" data-controller="iframe"></div>
         </div>
-        <div id="conversion-button">
+          <div id="conversion-button">
             <%= submit_tag "Add sentences to a deck", class:"button-orange" %>
           </div>
 
           <ul class="flashcards-list p-0">
              <% @conversion.sentences.sort_by { |sentence| sentence.created_at }.each do |sentence| %>
               <li class="flashcard-list-item m-3">
+                <span class="timestamp" style="display: none"><%= sentence.start_timestamp %></span>
                 <div class="checkbox">
                     <span class="results-flashcard">
                       <span class="checkbox-container mr-3">
@@ -25,8 +27,9 @@
                         <label for="checkbox-<%= sentence.id %>" class="checkbox-label"></label>
                       </span>
                       <p>
-                      <%= sentence.content %>
-                    </p></span>
+                        <%= sentence.content %>
+                      </p>
+                    </span>
                 </div>
               </li>
               <% end %>
@@ -36,3 +39,61 @@
 
   </div>
 </div>
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  const flashcardsList = document.querySelector('.flashcards-list');
+  var items = flashcardsList.getElementsByTagName("li");
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      videoId: '<%= @conversion.video_id %>',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.playVideo();
+    setInterval(scrollPlease, 100);
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  function onPlayerStateChange(event) {
+
+  }
+
+  function stopVideo() {
+    player.stopVideo();
+  }
+
+  function getTime() {
+    player.getCurrentTime();
+  }
+
+  function scrollPlease() {
+    if (player.getPlayerState() === 1) {
+      const ct = player.getCurrentTime();
+      for (let i = 0; i < items.length; i++) {
+        if (ct < items[i].childNodes[1].innerText) {
+          window.scroll(0, items[i].offsetTop - (window.screen.height / 2));
+          break;
+        }
+      }
+    }
+  }
+</script>
