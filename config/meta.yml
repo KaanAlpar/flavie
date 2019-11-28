@@ -1,0 +1,5 @@
+meta_product_name: "Flavie"
+meta_title: "Flavie - The Context Learning App"
+meta_description: "Create your own flashcards from videos. Learn faster and better."
+meta_image: "Flavie_6.png" # should exist in `app/assets/images/`
+twitter_account: "@AppFlavie"   # required for Twitter Cards
