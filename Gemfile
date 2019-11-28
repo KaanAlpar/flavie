@@ -10,6 +10,7 @@ gem 'rails', '5.2.3'
 gem 'redis'
 
 gem 'acts_as_learnable'
+gem 'addressable'
 gem 'autoprefixer-rails'
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.6.1'

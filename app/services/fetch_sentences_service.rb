@@ -7,7 +7,7 @@ class FetchSentencesService
 
     if language == 'en'
       array_elements = doc.css("transcript text").map do |node|
-        clean_content = node.children.text.gsub(/\n/, ' ').gsub(/\(.*?\)/, '').gsub(/\[.*?\]/, '').gsub('&quot;', '').gsub('&#39;', "'")
+        clean_content = node.children.text.gsub(/\n/, ' ').gsub(/\(.*?\)/, '').gsub(/\[/, '').gsub(/\]/, '').gsub('&quot;', '').gsub('&#39;', "'")
         { start: node.attributes['start'].value, content: clean_content }
       end
 
@@ -32,7 +32,7 @@ class FetchSentencesService
     elsif language == 'ja'
       # sentence_endings = ['ます', 'ません', 'ましょう', 'ませんでした', 'ました', 'よ', 'よね', 'です', '？', '！', '。', '', '', '', '', '', '', '', '', '']
       array_elements = doc.css("transcript text").map do |node|
-        clean_content = node.children.text.gsub(/\n/, ' ').gsub(/\(.*?\)/, '').gsub(' ', '。').gsub('  ', '。')
+        clean_content = node.children.text.gsub(/\n/, ' ')
         clean_content += "。"
         { start: node.attributes['start'].value, content: clean_content }
       end
