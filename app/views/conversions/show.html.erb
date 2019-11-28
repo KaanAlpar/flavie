@@ -87,7 +87,13 @@
     if (player.getPlayerState() === 1) {
       const ct = player.getCurrentTime();
       for (let i = 0; i < items.length; i++) {
+        if (i !== 0) {
+          items[i-1].childNodes[3].childNodes[1].classList.remove("highlighted");
+        }
         if (ct < parseFloat(items[i].childNodes[1].innerText)) {
+          if (i !== 0) {
+            items[i-1].childNodes[3].childNodes[1].classList.add("highlighted");
+          }
           window.scroll(0, items[i].offsetTop + (window.screen.height/4));
           break;
         }
