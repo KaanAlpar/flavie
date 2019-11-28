@@ -1,7 +1,8 @@
 .button-blue {
   background-color: $blue;
   color: white;
-  text-align: center;
+  // text-align: center;
+  line-height: 1.5;
   font-weight: bold;
   border: 1px solid $purple;
   border-radius: 4px;
@@ -11,6 +12,12 @@
     color: white;
     background-color: #7272e5
   }
+}
+
+.button-lg {
+  padding: 16px 48px;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .button-light-blue {

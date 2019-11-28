@@ -4,22 +4,26 @@
 <div class="container">
   <div class="d-flex justify-content-center my-5">
     <div class="container mb-3">
-      <div class="container">
-        <h2 class="mb-5"><%= @deck.flashcards.count %> flashcards</h2>
-        <p><strong>Due review:</strong> number of cards to review</p>
-        <p><strong>New:</strong> number of new cards in the deck</p>
-        <p><strong>Last studied:</strong> <%= @deck.flashcards.any? ? @deck.flashcards.first.studied_at : "0 Flashcards" %></p>
-        <div class="d-flex justify-content-center">
+      <div class="container d-flex justify-content-between">
+        <div>
+          <h2 class="mb-4">You have <%= @deck.flashcards.count %> flashcards in this deck</h2>
+          <p><strong>Date of creation: </strong> <%= @deck.created_at.strftime("%Y-%m-%d") %></p>
+          <p><strong>Last updated: </strong> <%= @deck.updated_at.strftime("%Y-%m-%d") %></p>
+        </div>
+        <div>
+        <!-- <div class="d-flex justify-content-center"> -->
           <% if @deck.flashcards.any?  %>
-            <%= link_to practice_deck_path(@deck), class: 'button-blue align-items-center' do %>
+            <%= link_to practice_deck_path(@deck), class: 'btn btn-primary button-lg align-items-center' do %>
               Study now
             <% end %>
+
           <% else %>
             <%= link_to root_path(@deck), class: 'button-blue align-items-center' do %>
               Add Video
             <% end %>
           <% end %>
         </div>
+        <!-- </div> -->
       </div>
       <div class="flashcard-container p-3">
         <% @deck.flashcards.sort_by{ |f| f.created_at }.each do |flashcard| %>
@@ -34,8 +38,8 @@
                   <p><%= flashcard.phrase_translation %></p>
                 <% end %>
             </div>
-            <%= link_to edit_flashcard_path(flashcard), class: 'button-blue mr-3' do %>
-              edit
+            <%= link_to edit_flashcard_path(flashcard), class: 'btn btn-outline-primary mr-3' do %>
+              <i class="fas fa-edit"></i>
             <% end %>
           </div>
         <% end %>
