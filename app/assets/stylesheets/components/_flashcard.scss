@@ -13,15 +13,15 @@
     border-radius: 8px;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
     padding: 50px;
     background: #FAFAFA;
     min-width: 160px;
     -webkit-perspective: 800;
     width: 1000px;
-    height: 600px;
+    height: 560px;
     position: relative;
-    margin: 50px auto;
+    margin-top: 50px;
   }
   &-front {
   }
