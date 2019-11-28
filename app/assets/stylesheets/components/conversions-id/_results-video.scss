@@ -4,10 +4,13 @@
 
   &--fixed {
     position: fixed;
-    top: 260px;
+    top: 60px;
   }
 }
 
+.highlighted {
+  background: #a188fc;
+}
 // @media(max-width: 1768px) {
 //   .results-video {
 //   display: flex;
