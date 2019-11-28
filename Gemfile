@@ -18,6 +18,7 @@ gem 'pundit'
 gem 'rest-client'
 gem 'sassc-rails'
 gem 'simple_form'
+gem 'tiny_segmenter'
 gem 'uglifier'
 gem 'webpacker'
 
