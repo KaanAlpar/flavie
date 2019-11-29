@@ -14,7 +14,9 @@
       <div class="dashboard-flashcard-count text-center pt-3 pb-3 m-4">
         <h4>flashcards</h4>
         <i class="far fa-clone icon m-2"></i>
-        <h4>432</h4>
+        <% fc_count = current_user.decks.map { |d| d.flashcards.count } %>
+        <h4><%= fc_count.sum %></h4>
+
       </div>
       <div class="dashboard-weekly-time text-center pt-3 pb-3 m-4">
         <h4>success rate</h4>
