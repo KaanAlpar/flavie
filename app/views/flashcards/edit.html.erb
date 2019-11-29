@@ -1,5 +1,5 @@
 <div class="container">
-  <div style="margin-bottom: 320px; margin-top: 80px;">
+  <div style="margin-bottom: 320px; margin-top: 80px; font-size: 1.5rem;">
     <h1 class="text-center">Editing Flashcard</h1>
     <%#= simple_form_for :translation, url: get_translation_path, remote: true do |f| %>
       <%# col = @flashcard.sentence.content.split(' ').map { |s| s.gsub(/[!.,?]/, '')} %>
@@ -30,7 +30,7 @@
           <% end %>
       </div>
         <h3>Back</h3>
-        <%= f.input :phrase_translation, label: false %>
+        <span class="flashcard-back-form" ><%= f.input :phrase_translation, label: false %></span>
         <%= f.button :submit, 'submit', class: 'button-blue' %>
       <% end %>
     </div>
